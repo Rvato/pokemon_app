@@ -1,0 +1,19 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.side-bar {
+  height: 100%;
+  width: 240px;
+  background-color: #424242;
+  box-shadow: 6px 4px 6px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  &__content {
+    font-size: 12px;
+    color: white;
+    margin-top: 120px;
+    padding-left: 36px;
+  }
+}
