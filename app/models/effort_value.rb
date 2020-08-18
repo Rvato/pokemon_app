@@ -1,0 +1,2 @@
+class EffortValue < ApplicationRecord
+end

@@ -47,7 +47,7 @@ Things you may want to cover:
 - has_many :pokemons
 
 
-## current_status table
+## current_statuses table
 |Column             |Type      |Options    |
 |-------------------|----------|-----------|
 |cs_hp              |string    |null: false|
@@ -61,7 +61,7 @@ Things you may want to cover:
 - has_one :pokemon, dependent: :destroy
 
 
-## base_status table
+## base_statuses table
 |Column             |Type      |Options    |
 |-------------------|----------|-----------|
 |bs_hp              |string    |null: false|
@@ -75,7 +75,7 @@ Things you may want to cover:
 - has_one :pokemon, dependent: :destroy
 
 
-## effort_value table
+## effort_values table
 |Column             |Type      |Options    |
 |-------------------|----------|-----------|
 |ev_hp              |string    |null: false|
@@ -89,7 +89,7 @@ Things you may want to cover:
 - has_one :pokemon, dependent: :destroy
 
 
-## marking table
+## markings table
 |Column     |Type       |Options    |
 |-----------|-----------|-----------|
 |pokemon_id |references |null: false, foreign_key: true|

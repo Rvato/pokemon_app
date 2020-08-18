@@ -1,0 +1,2 @@
+class BaseStatus < ApplicationRecord
+end
