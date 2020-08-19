@@ -17,5 +17,5 @@ class PartiesController < ApplicationController
 
   def destroy
   end
-  
+
 end
