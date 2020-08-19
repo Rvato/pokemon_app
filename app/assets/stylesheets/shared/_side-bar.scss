@@ -11,9 +11,22 @@
   position: fixed;
   left: 0;
   &__content {
+    display: block;
+    position: relative;
+    background-color: #303030;
     font-size: 12px;
-    color: white;
-    margin-top: 120px;
-    padding-left: 36px;
+    line-height: 48px;
+    text-align: center;
+    margin-top: 48px;
+    padding: 24px;
+    &__party {
+      position: absolute;
+      height: 48px;
+      width: 240px;
+      color: white;
+      text-decoration: none;
+      top: 0;
+      left: 0;
+    }
   }
 }

@@ -13,11 +13,11 @@
   &__logo {
     font-size: 14px;
     font-weight: 600;
-    color: white;
     margin-top: 24px;
     margin-left: 36px;
-    &__img {
-      filter: grayscale(100%);
+    a {
+      color: white;
+      text-decoration: none;
     }
   }
 }
