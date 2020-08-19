@@ -66,6 +66,11 @@ ActiveRecord::Schema.define(version: 2020_08_17_103152) do
     t.string "gender", null: false
     t.string "ability", null: false
     t.string "nature", null: false
+    t.string "item"
+    t.string "move1", null: false
+    t.string "move2"
+    t.string "move3"
+    t.string "move4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

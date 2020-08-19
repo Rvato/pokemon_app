@@ -32,6 +32,11 @@ Things you may want to cover:
 |gender     |string    |null: false|
 |ability    |string    |null: false|
 |nature     |string    |null: false|
+|item       |string    |           |
+|move1      |string    |null: false|
+|move2      |string    |           |
+|move3      |string    |           |
+|move4      |string    |           |
 
 ### Association
 - belongs_to :party
