@@ -2,5 +2,30 @@
 
   .party
     .party__wrap
-      .party__wrap__container
-      
+      .party__wrap__pokemon1
+        
+        -# ポケモン
+        .label-name
+          ポケモン
+        .form-name
+          = text_field_tag :name, "", class: "form-name__input", placeholder: "ポケモン", maxlength: "6", type: "text"
+        -# ニックネーム
+        .label-nickname
+          ニックネーム
+        .form-nickname
+          = text_field_tag :nickname, "", class: "form-nickname__input", placeholder: "ニックネーム", maxlength: "12", type: "text"
+        -# 特性
+        .label-ability
+          特性
+        .form-ability
+          = text_field_tag :ability, "", class: "form-ability__input", placeholder: "特性", type: "text"
+        -# 性格
+        .label-nature
+          性格
+        .form-nature
+          = text_field_tag :nature, "", class: "form-nature__input", placeholder: "性格", maxlength: "5", type: "text"
+        -# ニックネーム
+        .label-nickname
+          ニックネーム
+        .form-nickname
+          = text_field_tag :nickname, "", class: "form-nickname__input", placeholder: "ニックネーム", maxlength: "12", type: "text"
