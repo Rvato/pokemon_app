@@ -8,8 +8,9 @@
   background-color: #424242;
   box-shadow: 6px 4px 6px 0 rgba(0, 0, 0, 0.4);
   z-index: 1;
-  position: fixed;
+  top: 0;
   left: 0;
+  position: fixed;
   &__content {
     display: block;
     position: relative;
@@ -17,7 +18,7 @@
     font-size: 12px;
     line-height: 48px;
     text-align: center;
-    margin-top: 48px;
+    margin-top: 120px;
     padding: 24px;
     &__party {
       position: absolute;
