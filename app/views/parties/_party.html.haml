@@ -6,6 +6,7 @@
       -# ------------------------ 1匹目 ------------------------ #-
       .party__wrap__pokemon1
         .pokemon-container
+          = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
           First
           .pokemon-container__top
             -# ---- ポケモン ---- #-
@@ -26,32 +27,33 @@
                 性別
               .form-gender
                 %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
-                  %option{ value: "" }  --
+                  %option{ value: "" }  ----
                   %option{ value: "1" } ♂
                   %option{ value: "2" } ♀
                   %option{ value: "3" } 不明
+          -# ----種族値---- #-
           .pokemon-container__base-statuses
-            -# ----種族値---- #-
             .label-base-status
               種族値
-              .form-status
+            .form-base-status
+              .form-base-status__hp
                 H
-                = text_field_tag :bs_hp, "", class: "form-status__input", maxlength: "4", type: "text"
-              .form-status
+                = text_field_tag :bs_hp, "", class: "form-base-status__hp__input", maxlength: "3", type: "text"
+              .form-base-status__attack
                 A
-                = text_field_tag :bs_attack, "", class: "form-status__input", maxlength: "3", type: "text"
-              .form-status
+                = text_field_tag :bs_attack, "", class: "form-base-status__attack__input", maxlength: "3", type: "text"
+              .form-base-status__defense
                 B
-                = text_field_tag :bs_defense, "", class: "form-status__input", maxlength: "3", type: "text"
-              .form-status
+                = text_field_tag :bs_defense, "", class: "form-base-status__defense__input", maxlength: "3", type: "text"
+              .form-base-status__special-attack
                 C
-                = text_field_tag :bs_special_attack, "", class: "form-status__input", maxlength: "3", type: "text"
-              .form-status
+                = text_field_tag :bs_special_attack, "", class: "form-base-status__special-attack__input", maxlength: "3", type: "text"
+              .form-base-status__special-defense
                 D
-                = text_field_tag :bs_special_defense, "", class: "form-status__input", maxlength: "3", type: "text"
-              .form-status
+                = text_field_tag :bs_special_defense, "", class: "form-base-status__special-defense__input", maxlength: "3", type: "text"
+              .form-base-status__speed
                 S
-                = text_field_tag :bs_speed, "", class: "form-status__input", maxlength: "3", type: "text"
+                = text_field_tag :bs_speed, "", class: "form-base-status__speed__input", maxlength: "3", type: "text"
           .pokemon-container__center
             -# ---- 特性 ---- #-
             .pokemon-container__center__ability
@@ -133,8 +135,8 @@
               .form-status
                 S
                 = text_field_tag :cs_speed, "", class: "form-status__input", maxlength: "3", type: "text"
+          -# ---- 努力値 ---- #-
           .pokemon-container__effort-values
-            -# ---- 努力値 ---- #-
             .label-effort-value
               努力値
               .form-status
@@ -155,8 +157,8 @@
               .form-status
                 S
                 = text_field_tag :ev_speed, "", class: "form-status__input", maxlength: "3", type: "text"
+        -# ---- 技 ---- #-
         .pokemon-moves
-          -# 技
           .label-move
             わざ
             .form

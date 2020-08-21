@@ -25,6 +25,7 @@
           display: flex;
           font-size: 12px;
           margin: 4px;
+          // ---- ポケモン ---- //
           &__name {
             color: gray;
             .form-name__input {
@@ -37,9 +38,9 @@
               color: white;
               font-size: 14px;
               font-weight: 600;
-              padding-left: 4px;
             }
           }
+          // ---- ニックネーム ---- //
           &__nickname {
             color: gray;
             margin-left: 12px;
@@ -51,63 +52,141 @@
               outline: 0;
               background-color: #424242;
               color: white;
-              font-size: 14px;
-              padding-left: 4px;
             }
           }
+          // ---- 性別 ---- //
           &__gender {
             color: gray;
             margin-left: 12px;
             .form-gender__input {
               height: 36px;
-              width: 36px;
+              width: 60px;
               border: 0;
               border-bottom: 1px solid whitesmoke;
               outline: 0;
               background-color: #424242;
               color: white;
-              font-size: 14px;
-              padding-left: 4px;
             }
           }
-          
+        }
+        // ---- 種族値 ---- //
+        &__base-statuses {
+          color: gray;
+          font-size: 12px;
+          margin: 6px 0 0 4px;
+          .form-base-status {
+            display: flex;
+            &__hp {
+              &__input {
+                height: 36px;
+                width: 36px;
+                border: 0;
+                border-bottom: 1px solid whitesmoke;
+                outline: 0;
+                background-color: #424242;
+                color: white;
+              }
+            }
+            &__attack {
+              &__input {
+                height: 36px;
+                width: 36px;
+                border: 0;
+                border-bottom: 1px solid whitesmoke;
+                outline: 0;
+                background-color: #424242;
+                color: white;
+              }
+            }
+            &__defense {
+              &__input {
+                height: 36px;
+                width: 36px;
+                border: 0;
+                border-bottom: 1px solid whitesmoke;
+                outline: 0;
+                background-color: #424242;
+                color: white;
+              }
+            }
+            &__special-attack {
+              &__input {
+                height: 36px;
+                width: 36px;
+                border: 0;
+                border-bottom: 1px solid whitesmoke;
+                outline: 0;
+                background-color: #424242;
+                color: white;
+              }
+            }
+            &__special-defense {
+              &__input {
+                height: 36px;
+                width: 36px;
+                border: 0;
+                border-bottom: 1px solid whitesmoke;
+                outline: 0;
+                background-color: #424242;
+                color: white;
+              }
+            }
+            &__speed {
+              &__input {
+                height: 36px;
+                width: 36px;
+                border: 0;
+                border-bottom: 1px solid whitesmoke;
+                outline: 0;
+                background-color: #424242;
+                color: white;
+              }
+            }
+          }
         }
         &__center {
           display: flex;
+          font-size: 12px;
           margin: 4px;
-          .form-ability__input {
-            height: 36px;
-            width: 120px;
-            border: 0;
-            border-bottom: 1px solid whitesmoke;
-            outline: 0;
-            background-color: #424242;
-            color: white;
-            font-size: 14px;
-            padding-left: 4px;
+          &__ability {
+            color: gray;
+            .form-ability__input {
+              height: 36px;
+              width: 120px;
+              border: 0;
+              border-bottom: 1px solid whitesmoke;
+              outline: 0;
+              background-color: #424242;
+              color: white;
+            }
           }
-          .form-nature__input {
-            height: 36px;
-            width: 120px;
-            border: 0;
-            border-bottom: 1px solid whitesmoke;
-            outline: 0;
-            background-color: #424242;
-            color: white;
-            font-size: 14px;
-            padding-left: 4px;
+          &__nature {
+            color: gray;
+            margin-left: 12px;
+            .form-nature__input {
+              height: 36px;
+              width: 120px;
+              border: 0;
+              border-bottom: 1px solid whitesmoke;
+              outline: 0;
+              background-color: #424242;
+              color: white;
+            }
           }
-          .form-item__input {
-            height: 36px;
-            width: 180px;
-            border: 0;
-            border-bottom: 1px solid whitesmoke;
-            outline: 0;
-            background-color: #424242;
-            color: white;
-            font-size: 14px;
-            padding-left: 4px;
+          &__item {
+            color: gray;
+            margin-left: 12px;
+            .form-item__input {
+              height: 36px;
+              width: 180px;
+              border: 0;
+              border-bottom: 1px solid whitesmoke;
+              outline: 0;
+              background-color: #424242;
+              color: white;
+            }
           }
+          
         }
         // ステータス関連
         .label {
