@@ -23,41 +23,54 @@
       .pokemon-container {
         &__top {
           display: flex;
+          font-size: 12px;
           margin: 4px;
-          .form-name__input {
-            height: 36px;
-            width: 120px;
-            border: 0;
-            border-bottom: 1px solid whitesmoke;
-            outline: 0;
-            background-color: #424242;
-            color: white;
-            font-size: 14px;
-            font-weight: 600;
-            padding-left: 4px;
+          &__name {
+            color: gray;
+            .form-name__input {
+              height: 36px;
+              width: 120px;
+              border: 0;
+              border-bottom: 1px solid whitesmoke;
+              outline: 0;
+              background-color: #424242;
+              color: white;
+              font-size: 14px;
+              font-weight: 600;
+              padding-left: 4px;
+            }
           }
-          .form-nickname__input {
-            height: 36px;
-            width: 120px;
-            border: 0;
-            border-bottom: 1px solid whitesmoke;
-            outline: 0;
-            background-color: #424242;
-            color: white;
-            font-size: 14px;
-            padding-left: 4px;
+          &__nickname {
+            color: gray;
+            margin-left: 12px;
+            .form-nickname__input {
+              height: 36px;
+              width: 120px;
+              border: 0;
+              border-bottom: 1px solid whitesmoke;
+              outline: 0;
+              background-color: #424242;
+              color: white;
+              font-size: 14px;
+              padding-left: 4px;
+            }
           }
-          .form-gender__input {
-            height: 36px;
-            width: 36px;
-            border: 0;
-            border-bottom: 1px solid whitesmoke;
-            outline: 0;
-            background-color: #424242;
-            color: white;
-            font-size: 14px;
-            padding-left: 4px;
+          &__gender {
+            color: gray;
+            margin-left: 12px;
+            .form-gender__input {
+              height: 36px;
+              width: 36px;
+              border: 0;
+              border-bottom: 1px solid whitesmoke;
+              outline: 0;
+              background-color: #424242;
+              color: white;
+              font-size: 14px;
+              padding-left: 4px;
+            }
           }
+          
         }
         &__center {
           display: flex;
@@ -98,9 +111,9 @@
         }
         // ステータス関連
         .label {
-          display: flex;
-          font-size: 12px;
-          color: gray;
+          
+          
+          margin-left: 4px;
           .form {
           }
           .form-status {
