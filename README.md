@@ -86,12 +86,12 @@ Things you may want to cover:
 ## effort_values table
 |Column             |Type      |Options    |
 |-------------------|----------|-----------|
-|ev_hp              |string    |null: false|
-|ev_attack          |string    |null: false|
-|ev_defense         |string    |null: false|
-|ev_special_attack  |string    |null: false|
-|ev_special_defense |string    |null: false|
-|ev_speed           |string    |null: false|
+|ev_hp              |string    |           |
+|ev_attack          |string    |           |
+|ev_defense         |string    |           |
+|ev_special_attack  |string    |           |
+|ev_special_defense |string    |           |
+|ev_speed           |string    |           |
 
 ### Association
 - has_one :pokemon, dependent: :destroy
@@ -100,7 +100,7 @@ Things you may want to cover:
 ## markings table
 |Column     |Type       |Options    |
 |-----------|-----------|-----------|
-|pokemon_id |references |null: false, foreign_key: true|
+|pokemon_id |references |foreign_key: true|
 
 ### Association
 - belongs_to :pokemon

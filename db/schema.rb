@@ -35,18 +35,18 @@ ActiveRecord::Schema.define(version: 2020_08_17_103152) do
   end
 
   create_table "effort_values", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "ev_hp", null: false
-    t.string "ev_attack", null: false
-    t.string "ev_defense", null: false
-    t.string "ev_special_attack", null: false
-    t.string "ev_special_defense", null: false
-    t.string "ev_speed", null: false
+    t.string "ev_hp"
+    t.string "ev_attack"
+    t.string "ev_defense"
+    t.string "ev_special_attack"
+    t.string "ev_special_defense"
+    t.string "ev_speed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "markings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "pokemon_id", null: false
+    t.bigint "pokemon_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pokemon_id"], name: "index_markings_on_pokemon_id"
