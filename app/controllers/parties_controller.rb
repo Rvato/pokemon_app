@@ -1,16 +1,17 @@
 class PartiesController < ApplicationController
 
   def index
-    @parties = Party.all
   end
 
   def new
+    @party = Party.new
   end
 
   def create
   end
 
   def edit
+    @party = Party.find(params[:id])
   end
 
   def update

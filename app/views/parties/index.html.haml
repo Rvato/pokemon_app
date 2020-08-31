@@ -1,6 +1,8 @@
-= form_with local: true, class: "party-register" do |form|
+= form_with local: true, class: "party-register" do |f|
   .wrapper-party
     = render "shared/header"
     = render "shared/side-bar"
     = render "party"
-    = render "shared/register-btn"
+  .register-btn
+    .register-btn__text
+      = f.submit "登録する", class: "register-btn__text__submit"
