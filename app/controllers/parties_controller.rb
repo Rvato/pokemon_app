@@ -4,12 +4,14 @@ class PartiesController < ApplicationController
   end
 
   def new
+    @party = Party.new
   end
 
   def create
   end
 
   def edit
+    @party = Party.find(params[:id])
   end
 
   def update

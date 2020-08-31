@@ -1,5 +1,8 @@
-.wrapper-party
-  = render "shared/header"
-  = render "shared/side-bar"
-  = render "party"
-  = render "shared/register-btn"
+= form_with local: true, class: "party-register" do |f|
+  .wrapper-party
+    = render "shared/header"
+    = render "shared/side-bar"
+    = render "party"
+  .register-btn
+    .register-btn__text
+      = f.submit "登録する", class: "register-btn__text__submit"
