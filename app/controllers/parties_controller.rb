@@ -5,6 +5,7 @@ class PartiesController < ApplicationController
 
   def new
     @party = Party.new
+    @party.build_pokemon
   end
 
   def create
@@ -31,7 +32,10 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:party_id, :party_name)
+    params.require(:party).permit(
+      :party_name,
+      pokemons_attributes:[:name, :nickname, :gender, :ability, :nature, :item, :move1, :move2, :move3, :move4]
+    )
   end
 
 end
