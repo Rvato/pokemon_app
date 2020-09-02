@@ -1,0 +1,26 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.party-name {
+  height: 60px;
+  width: 180px;
+  background-color: #424242;
+  box-shadow: 6px 4px 6px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  bottom: 120px;
+  right: 0;
+  color: whitesmoke;
+  font-size: 12px;
+  padding: 6px;
+  position: fixed;
+  &__input {
+    height: 24px;
+    width: 120px;
+    border: 0;
+    border-bottom: 1px solid whitesmoke;
+    outline: 0;
+    background-color: #424242;
+    color: whitesmoke;
+  }
+}
