@@ -1,8 +1,11 @@
-= form_with local: true, class: "party-register" do |f|
+= form_with model: @party, local: true, class: "party-register" do |f|
   .wrapper-party
     = render "shared/header"
     = render "shared/side-bar"
     = render "party"
+  .party-name
+    パーティ名
+    = text_field_tag :party_name, "", class: "party-name__input", maxlength: "6", type: "text"
   .register-btn
     .register-btn__text
       = f.submit "登録する", class: "register-btn__text__submit"
