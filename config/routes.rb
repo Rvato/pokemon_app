@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   root to: 'tops#index'
-  resources :pokemons, only: [:new, :create]
-  resources :parties, only: [:index, :new, :create, :edit, :update, :destroy]
+
+  resources :parties, only: [:index, :new, :create, :edit, :update, :destroy] do
+    resources :pokemons, only: [:new, :create]
+  end
 
 end
