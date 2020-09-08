@@ -1033,3 +1033,11 @@
                     = f.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__bottom__move4
                     = f.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+
+  .party-name
+    パーティ名
+    = f.text_field :party_name, class: "party-name__input", maxlength: "6", type: "text", autocomplete: "off"
+
+  .register-btn
+    .register-btn__text
+      = f.submit "登録する", class: "register-btn__text__submit"

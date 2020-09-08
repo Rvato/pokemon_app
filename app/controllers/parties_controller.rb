@@ -36,7 +36,12 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(
+    # params.require(:party).permit(
+    #   :party_id,
+    #   :party_name,
+    #   pokemons_attributes:[:pokemon_id, :name, :nickname, :gender, :ability, :nature, :item, :move1, :move2, :move3, :move4]
+    # )
+    params.permit(
       :party_id,
       :party_name,
       pokemons_attributes:[:pokemon_id, :name, :nickname, :gender, :ability, :nature, :item, :move1, :move2, :move3, :move4]
