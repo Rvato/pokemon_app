@@ -64,7 +64,7 @@ Things you may want to cover:
 |cs_speed           |string    |null: false|
 
 ### Association
-- has_one :pokemon, dependent: :destroy
+- belongs_to :pokemon
 
 
 ## base_statuses table
@@ -78,7 +78,7 @@ Things you may want to cover:
 |bs_speed           |string    |null: false|
 
 ### Association
-- has_one :pokemon, dependent: :destroy
+- belongs_to :pokemon
 
 
 ## effort_values table
@@ -92,7 +92,7 @@ Things you may want to cover:
 |ev_speed           |string    |           |
 
 ### Association
-- has_one :pokemon, dependent: :destroy
+- belongs_to :pokemon
 
 
 ## markings table

@@ -1,3 +1,3 @@
 class EffortValue < ApplicationRecord
-  has_one :pokemon, dependent: :destroy
+  belongs_to :pokemon
 end
