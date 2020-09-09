@@ -26,7 +26,6 @@ Things you may want to cover:
 ## pokemons table
 |Column     |Type      |Options    |
 |-----------|----------|-----------|
-|pokemon_id |string    |null: false|
 |name       |string    |null: false|
 |nickname   |string    |           |
 |gender     |string    |null: false|
@@ -48,7 +47,6 @@ Things you may want to cover:
 ## parties table
 |Column     |Type      |Options    |
 |-----------|----------|-----------|
-|party_id   |string    |null: false|
 |party_name |string    |null: false|
 
 ### Association

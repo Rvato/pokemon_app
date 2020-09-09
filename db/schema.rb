@@ -53,14 +53,12 @@ ActiveRecord::Schema.define(version: 2020_08_17_103152) do
   end
 
   create_table "parties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "party_id", null: false
     t.string "party_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "pokemons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "pokemon_id", null: false
     t.string "name", null: false
     t.string "nickname"
     t.string "gender", null: false
