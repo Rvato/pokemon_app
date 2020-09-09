@@ -24,23 +24,38 @@ Things you may want to cover:
 # DB設計------------------------------------------------
 
 ## pokemons table
-|Column     |Type      |Options    |
-|-----------|----------|-----------|
-|name       |string    |null: false|
-|nickname   |string    |           |
-|gender     |string    |null: false|
-|ability    |string    |null: false|
-|nature     |string    |null: false|
-|item       |string    |           |
-|move1      |string    |null: false|
-|move2      |string    |           |
-|move3      |string    |           |
-|move4      |string    |           |
+|Column             |Type      |Options    |
+|-------------------|----------|-----------|
+|name               |string    |null: false|
+|nickname           |string    |           |
+|gender             |string    |null: false|
+|ability            |string    |null: false|
+|nature             |string    |null: false|
+|item               |string    |           |
+|move1              |string    |null: false|
+|move2              |string    |           |
+|move3              |string    |           |
+|move4              |string    |           |
+|cs_hp              |string    |null: false|
+|cs_attack          |string    |null: false|
+|cs_defense         |string    |null: false|
+|cs_special_attack  |string    |null: false|
+|cs_special_defense |string    |null: false|
+|cs_speed           |string    |null: false|
+|bs_hp              |string    |null: false|
+|bs_attack          |string    |null: false|
+|bs_defense         |string    |null: false|
+|bs_special_attack  |string    |null: false|
+|bs_special_defense |string    |null: false|
+|bs_speed           |string    |null: false|
+|ev_hp              |string    |           |
+|ev_attack          |string    |           |
+|ev_defense         |string    |           |
+|ev_special_attack  |string    |           |
+|ev_special_defense |string    |           |
+|ev_speed           |string    |           |
 
 ### Association
-- has_one    :current_status
-- has_one    :base_status
-- has_one    :effort_value
 - belongs_to :party
 
 
@@ -51,48 +66,6 @@ Things you may want to cover:
 
 ### Association
 - has_many :pokemons
-
-
-## current_statuses table
-|Column             |Type      |Options    |
-|-------------------|----------|-----------|
-|cs_hp              |string    |null: false|
-|cs_attack          |string    |null: false|
-|cs_defense         |string    |null: false|
-|cs_special_attack  |string    |null: false|
-|cs_special_defense |string    |null: false|
-|cs_speed           |string    |null: false|
-
-### Association
-- belongs_to :pokemon
-
-
-## base_statuses table
-|Column             |Type      |Options    |
-|-------------------|----------|-----------|
-|bs_hp              |string    |null: false|
-|bs_attack          |string    |null: false|
-|bs_defense         |string    |null: false|
-|bs_special_attack  |string    |null: false|
-|bs_special_defense |string    |null: false|
-|bs_speed           |string    |null: false|
-
-### Association
-- belongs_to :pokemon
-
-
-## effort_values table
-|Column             |Type      |Options    |
-|-------------------|----------|-----------|
-|ev_hp              |string    |           |
-|ev_attack          |string    |           |
-|ev_defense         |string    |           |
-|ev_special_attack  |string    |           |
-|ev_special_defense |string    |           |
-|ev_speed           |string    |           |
-
-### Association
-- belongs_to :pokemon
 
 
 ## markings table
