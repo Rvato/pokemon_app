@@ -4,18 +4,20 @@ class PartiesController < ApplicationController
   end
 
   def new
+    @pokemon = Pokemon.new
+    @pokemon.build_current_status
+    @pokemon.build_base_status
+    @pokemon.build_effort_value
     @party = Party.new
     @party.build_pokemon
   end
 
   def create
-    @party = Party.new(party_params)
     @pokemon = Pokemon.new(pokemon_params)
-    if @party.save
-      redirect_to root_path, notice: 'パーティを作成しました'
-    else
-      render :new
-    end
+    @pokemon.save
+    @party = Party.new(party_params)
+    @party.save
+    redirect_to root_path, notice: 'パーティを作成しました'
   end
 
   def show
