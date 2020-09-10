@@ -1,1042 +1,1042 @@
 = form_with model: @party, local: true, class: "party-register" do |f|
   .party
+
     .party__wrap
       = f.fields_for :pokemon do |pokemon|
 
-      .party__wrap__top
+        .party__wrap__top
+          -# ------------------------ 1匹目 ------------------------ #-
+          .party__wrap__top__pokemon1
+            .pokemon-container
+              = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
+              1st
+              .pokemon-container__top
+                -# ---- ポケモン ---- #-
+                .pokemon-container__top__name
+                  .label-name
+                    ポケモン
+                  .form-name
+                    = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                -# ---- ニックネーム ---- #-
+                .pokemon-container__top__nickname
+                  .label-nickname
+                    ニックネーム
+                  .form-nickname
+                    = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                -# ---- 性別 ---- #-
+                .pokemon-container__top__gender
+                  .label-gender
+                    性別
+                  .form-gender
+                    %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
+                      %option{ value: "" }  ----
+                      %option{ value: "1" } ♂
+                      %option{ value: "2" } ♀
+                      %option{ value: "3" } 不明
+              -# ----種族値---- #-
+              .pokemon-container__base-statuses
+                .label-base-status
+                  種族値
+                .form-base-status
+                  .form-base-status__hp
+                    H
+                    = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__attack
+                    A
+                    = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__defense
+                    B
+                    = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-attack
+                    C
+                    = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-defense
+                    D
+                    = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__speed
+                    S
+                    = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              .pokemon-container__center
+                -# ---- 特性 ---- #-
+                .pokemon-container__center__ability
+                  .label-ability
+                    特性
+                  .form-ability
+                    = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                -# ---- 性格 ---- #-
+                .pokemon-container__center__nature
+                  .label-nature
+                    性格
+                  .form-nature
+                    = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                -# ---- 持ち物 ---- #-
+                .pokemon-container__center__item
+                  .label-item
+                    持ち物
+                  .form-item
+                    %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
+                      %option{ value: ""  }  ----
+                      %option{ value: "1" }  あつぞこブーツ
+                      %option{ value: "2" }  いのちのたま
+                      %option{ value: "3" }  おうじゃのしるし
+                      %option{ value: "4" }  回復系きのみ
+                      %option{ value: "5" }  かえんだま
+                      %option{ value: "6" }  からぶりほけん
+                      %option{ value: "7" }  きあいのタスキ
+                      %option{ value: "8" }  くろいてっきゅう
+                      %option{ value: "9" }  くろいヘドロ
+                      %option{ value: "10" } くろいメガネ
+                      %option{ value: "11" } こだわりスカーフ
+                      %option{ value: "12" } こだわりハチマキ
+                      %option{ value: "13" } こだわりメガネ
+                      %option{ value: "14" } ゴツゴツメット
+                      %option{ value: "15" } じしゃく
+                      %option{ value: "16" } じゃくてんほけん
+                      %option{ value: "17" } シルクのスカーフ
+                      %option{ value: "18" } しろいハーブ
+                      %option{ value: "19" } しんかのきせき
+                      %option{ value: "20" } せいれいプレート
+                      %option{ value: "21" } せんせいのつめ
+                      %option{ value: "22" } だっしゅつパック
+                      %option{ value: "23" } だっしゅつボタン
+                      %option{ value: "24" } たつじんのおび
+                      %option{ value: "25" } たべのこし
+                      %option{ value: "26" } ちからのハチマキ
+                      %option{ value: "27" } でんきだま
+                      %option{ value: "28" } とつげきチョッキ
+                      %option{ value: "29" } どくどくだま
+                      %option{ value: "30" } のどスプレー
+                      %option{ value: "31" } ひかりのねんど
+                      %option{ value: "32" } ピントレンズ
+                      %option{ value: "33" } ふうせん
+                      %option{ value: "34" } ぼうじんゴーグル
+                      %option{ value: "35" } フォーカスレンズ
+                      %option{ value: "36" } メンタルハーブ
+                      %option{ value: "37" } ものしりメガネ
+                      %option{ value: "38" } ラムのみ
+                      %option{ value: "39" } レッドカード
+              -# ---- ステータス ---- #-
+              .pokemon-container__current-statuses
+                .label-current-status
+                  ステータス
+                  .form-current-status
+                    .form-current-status__hp
+                      H
+                      = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__attack
+                      A
+                      = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__defense
+                      B
+                      = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-attack
+                      C
+                      = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-defense
+                      D
+                      = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__speed
+                      S
+                      = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 努力値 ---- #-
+              .pokemon-container__effort-values
+                .label-effort-value
+                  努力値
+                  .form-effort-value
+                    .form-effort-value__hp
+                      H
+                      = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__attack
+                      A
+                      = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__defense
+                      B
+                      = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special-attack
+                      C
+                      = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special_defense
+                      D
+                      = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__speed
+                      S
+                      = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 技 ---- #-
+              .pokemon-container__moves
+                .label-move
+                  わざ
+                  .form-move__top
+                    .form-move__top__move1
+                      = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__top__move2
+                      = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
+                  .form-move__bottom
+                    .form-move__bottom__move3
+                      = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__bottom__move4
+                      = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+          
+          -# ------------------------ 2匹目 ------------------------ #-
+          .party__wrap__top__pokemon2
+            .pokemon-container
+              = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
+              2nd
+              .pokemon-container__top
+                -# ---- ポケモン ---- #-
+                .pokemon-container__top__name
+                  .label-name
+                    ポケモン
+                  .form-name
+                    = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                -# ---- ニックネーム ---- #-
+                .pokemon-container__top__nickname
+                  .label-nickname
+                    ニックネーム
+                  .form-nickname
+                    = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                -# ---- 性別 ---- #-
+                .pokemon-container__top__gender
+                  .label-gender
+                    性別
+                  .form-gender
+                    %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
+                      %option{ value: "" }  ----
+                      %option{ value: "1" } ♂
+                      %option{ value: "2" } ♀
+                      %option{ value: "3" } 不明
+              -# ----種族値---- #-
+              .pokemon-container__base-statuses
+                .label-base-status
+                  種族値
+                .form-base-status
+                  .form-base-status__hp
+                    H
+                    = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__attack
+                    A
+                    = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__defense
+                    B
+                    = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-attack
+                    C
+                    = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-defense
+                    D
+                    = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__speed
+                    S
+                    = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              .pokemon-container__center
+                -# ---- 特性 ---- #-
+                .pokemon-container__center__ability
+                  .label-ability
+                    特性
+                  .form-ability
+                    = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                -# ---- 性格 ---- #-
+                .pokemon-container__center__nature
+                  .label-nature
+                    性格
+                  .form-nature
+                    = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                -# ---- 持ち物 ---- #-
+                .pokemon-container__center__item
+                  .label-item
+                    持ち物
+                  .form-item
+                    %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
+                      %option{ value: ""  }  ----
+                      %option{ value: "1" }  あつぞこブーツ
+                      %option{ value: "2" }  いのちのたま
+                      %option{ value: "3" }  おうじゃのしるし
+                      %option{ value: "4" }  回復系きのみ
+                      %option{ value: "5" }  かえんだま
+                      %option{ value: "6" }  からぶりほけん
+                      %option{ value: "7" }  きあいのタスキ
+                      %option{ value: "8" }  くろいてっきゅう
+                      %option{ value: "9" }  くろいヘドロ
+                      %option{ value: "10" } くろいメガネ
+                      %option{ value: "11" } こだわりスカーフ
+                      %option{ value: "12" } こだわりハチマキ
+                      %option{ value: "13" } こだわりメガネ
+                      %option{ value: "14" } ゴツゴツメット
+                      %option{ value: "15" } じしゃく
+                      %option{ value: "16" } じゃくてんほけん
+                      %option{ value: "17" } シルクのスカーフ
+                      %option{ value: "18" } しろいハーブ
+                      %option{ value: "19" } しんかのきせき
+                      %option{ value: "20" } せいれいプレート
+                      %option{ value: "21" } せんせいのつめ
+                      %option{ value: "22" } だっしゅつパック
+                      %option{ value: "23" } だっしゅつボタン
+                      %option{ value: "24" } たつじんのおび
+                      %option{ value: "25" } たべのこし
+                      %option{ value: "26" } ちからのハチマキ
+                      %option{ value: "27" } でんきだま
+                      %option{ value: "28" } とつげきチョッキ
+                      %option{ value: "29" } どくどくだま
+                      %option{ value: "30" } のどスプレー
+                      %option{ value: "31" } ひかりのねんど
+                      %option{ value: "32" } ピントレンズ
+                      %option{ value: "33" } ふうせん
+                      %option{ value: "34" } ぼうじんゴーグル
+                      %option{ value: "35" } フォーカスレンズ
+                      %option{ value: "36" } メンタルハーブ
+                      %option{ value: "37" } ものしりメガネ
+                      %option{ value: "38" } ラムのみ
+                      %option{ value: "39" } レッドカード
+              -# ---- ステータス ---- #-
+              .pokemon-container__current-statuses
+                .label-current-status
+                  ステータス
+                  .form-current-status
+                    .form-current-status__hp
+                      H
+                      = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__attack
+                      A
+                      = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__defense
+                      B
+                      = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-attack
+                      C
+                      = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-defense
+                      D
+                      = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__speed
+                      S
+                      = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 努力値 ---- #-
+              .pokemon-container__effort-values
+                .label-effort-value
+                  努力値
+                  .form-effort-value
+                    .form-effort-value__hp
+                      H
+                      = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__attack
+                      A
+                      = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__defense
+                      B
+                      = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special-attack
+                      C
+                      = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special_defense
+                      D
+                      = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__speed
+                      S
+                      = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 技 ---- #-
+              .pokemon-container__moves
+                .label-move
+                  わざ
+                  .form-move__top
+                    .form-move__top__move1
+                      = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__top__move2
+                      = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
+                  .form-move__bottom
+                    .form-move__bottom__move3
+                      = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__bottom__move4
+                      = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
 
-        -# ------------------------ 1匹目 ------------------------ #-
-        .party__wrap__top__pokemon1
-          .pokemon-container
-            = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
-            1st
-            .pokemon-container__top
-              -# ---- ポケモン ---- #-
-              .pokemon-container__top__name
-                .label-name
-                  ポケモン
-                .form-name
-                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
-              -# ---- ニックネーム ---- #-
-              .pokemon-container__top__nickname
-                .label-nickname
-                  ニックネーム
-                .form-nickname
-                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
-              -# ---- 性別 ---- #-
-              .pokemon-container__top__gender
-                .label-gender
-                  性別
-                .form-gender
-                  %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
-                    %option{ value: "" }  ----
-                    %option{ value: "1" } ♂
-                    %option{ value: "2" } ♀
-                    %option{ value: "3" } 不明
-            -# ----種族値---- #-
-            .pokemon-container__base-statuses
-              .label-base-status
-                種族値
-              .form-base-status
-                .form-base-status__hp
-                  H
-                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__attack
-                  A
-                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__defense
-                  B
-                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-attack
-                  C
-                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-defense
-                  D
-                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__speed
-                  S
-                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            .pokemon-container__center
-              -# ---- 特性 ---- #-
-              .pokemon-container__center__ability
-                .label-ability
-                  特性
-                .form-ability
-                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
-              -# ---- 性格 ---- #-
-              .pokemon-container__center__nature
-                .label-nature
-                  性格
-                .form-nature
-                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
-              -# ---- 持ち物 ---- #-
-              .pokemon-container__center__item
-                .label-item
-                  持ち物
-                .form-item
-                  %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
-                    %option{ value: ""  }  ----
-                    %option{ value: "1" }  あつぞこブーツ
-                    %option{ value: "2" }  いのちのたま
-                    %option{ value: "3" }  おうじゃのしるし
-                    %option{ value: "4" }  回復系きのみ
-                    %option{ value: "5" }  かえんだま
-                    %option{ value: "6" }  からぶりほけん
-                    %option{ value: "7" }  きあいのタスキ
-                    %option{ value: "8" }  くろいてっきゅう
-                    %option{ value: "9" }  くろいヘドロ
-                    %option{ value: "10" } くろいメガネ
-                    %option{ value: "11" } こだわりスカーフ
-                    %option{ value: "12" } こだわりハチマキ
-                    %option{ value: "13" } こだわりメガネ
-                    %option{ value: "14" } ゴツゴツメット
-                    %option{ value: "15" } じしゃく
-                    %option{ value: "16" } じゃくてんほけん
-                    %option{ value: "17" } シルクのスカーフ
-                    %option{ value: "18" } しろいハーブ
-                    %option{ value: "19" } しんかのきせき
-                    %option{ value: "20" } せいれいプレート
-                    %option{ value: "21" } せんせいのつめ
-                    %option{ value: "22" } だっしゅつパック
-                    %option{ value: "23" } だっしゅつボタン
-                    %option{ value: "24" } たつじんのおび
-                    %option{ value: "25" } たべのこし
-                    %option{ value: "26" } ちからのハチマキ
-                    %option{ value: "27" } でんきだま
-                    %option{ value: "28" } とつげきチョッキ
-                    %option{ value: "29" } どくどくだま
-                    %option{ value: "30" } のどスプレー
-                    %option{ value: "31" } ひかりのねんど
-                    %option{ value: "32" } ピントレンズ
-                    %option{ value: "33" } ふうせん
-                    %option{ value: "34" } ぼうじんゴーグル
-                    %option{ value: "35" } フォーカスレンズ
-                    %option{ value: "36" } メンタルハーブ
-                    %option{ value: "37" } ものしりメガネ
-                    %option{ value: "38" } ラムのみ
-                    %option{ value: "39" } レッドカード
-            -# ---- ステータス ---- #-
-            .pokemon-container__current-statuses
-              .label-current-status
-                ステータス
-                .form-current-status
-                  .form-current-status__hp
-                    H
-                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__attack
-                    A
-                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__defense
-                    B
-                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-attack
-                    C
-                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-defense
-                    D
-                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__speed
-                    S
-                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 努力値 ---- #-
-            .pokemon-container__effort-values
-              .label-effort-value
-                努力値
-                .form-effort-value
-                  .form-effort-value__hp
-                    H
-                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__attack
-                    A
-                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__defense
-                    B
-                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special-attack
-                    C
-                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special_defense
-                    D
-                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__speed
-                    S
-                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 技 ---- #-
-            .pokemon-container__moves
-              .label-move
-                わざ
-                .form-move__top
-                  .form-move__top__move1
-                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__top__move2
-                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
-                .form-move__bottom
-                  .form-move__bottom__move3
-                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__bottom__move4
-                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
-        
-        -# ------------------------ 2匹目 ------------------------ #-
-        .party__wrap__top__pokemon2
-          .pokemon-container
-            = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
-            2nd
-            .pokemon-container__top
-              -# ---- ポケモン ---- #-
-              .pokemon-container__top__name
-                .label-name
-                  ポケモン
-                .form-name
-                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
-              -# ---- ニックネーム ---- #-
-              .pokemon-container__top__nickname
-                .label-nickname
-                  ニックネーム
-                .form-nickname
-                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
-              -# ---- 性別 ---- #-
-              .pokemon-container__top__gender
-                .label-gender
-                  性別
-                .form-gender
-                  %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
-                    %option{ value: "" }  ----
-                    %option{ value: "1" } ♂
-                    %option{ value: "2" } ♀
-                    %option{ value: "3" } 不明
-            -# ----種族値---- #-
-            .pokemon-container__base-statuses
-              .label-base-status
-                種族値
-              .form-base-status
-                .form-base-status__hp
-                  H
-                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__attack
-                  A
-                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__defense
-                  B
-                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-attack
-                  C
-                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-defense
-                  D
-                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__speed
-                  S
-                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            .pokemon-container__center
-              -# ---- 特性 ---- #-
-              .pokemon-container__center__ability
-                .label-ability
-                  特性
-                .form-ability
-                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
-              -# ---- 性格 ---- #-
-              .pokemon-container__center__nature
-                .label-nature
-                  性格
-                .form-nature
-                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
-              -# ---- 持ち物 ---- #-
-              .pokemon-container__center__item
-                .label-item
-                  持ち物
-                .form-item
-                  %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
-                    %option{ value: ""  }  ----
-                    %option{ value: "1" }  あつぞこブーツ
-                    %option{ value: "2" }  いのちのたま
-                    %option{ value: "3" }  おうじゃのしるし
-                    %option{ value: "4" }  回復系きのみ
-                    %option{ value: "5" }  かえんだま
-                    %option{ value: "6" }  からぶりほけん
-                    %option{ value: "7" }  きあいのタスキ
-                    %option{ value: "8" }  くろいてっきゅう
-                    %option{ value: "9" }  くろいヘドロ
-                    %option{ value: "10" } くろいメガネ
-                    %option{ value: "11" } こだわりスカーフ
-                    %option{ value: "12" } こだわりハチマキ
-                    %option{ value: "13" } こだわりメガネ
-                    %option{ value: "14" } ゴツゴツメット
-                    %option{ value: "15" } じしゃく
-                    %option{ value: "16" } じゃくてんほけん
-                    %option{ value: "17" } シルクのスカーフ
-                    %option{ value: "18" } しろいハーブ
-                    %option{ value: "19" } しんかのきせき
-                    %option{ value: "20" } せいれいプレート
-                    %option{ value: "21" } せんせいのつめ
-                    %option{ value: "22" } だっしゅつパック
-                    %option{ value: "23" } だっしゅつボタン
-                    %option{ value: "24" } たつじんのおび
-                    %option{ value: "25" } たべのこし
-                    %option{ value: "26" } ちからのハチマキ
-                    %option{ value: "27" } でんきだま
-                    %option{ value: "28" } とつげきチョッキ
-                    %option{ value: "29" } どくどくだま
-                    %option{ value: "30" } のどスプレー
-                    %option{ value: "31" } ひかりのねんど
-                    %option{ value: "32" } ピントレンズ
-                    %option{ value: "33" } ふうせん
-                    %option{ value: "34" } ぼうじんゴーグル
-                    %option{ value: "35" } フォーカスレンズ
-                    %option{ value: "36" } メンタルハーブ
-                    %option{ value: "37" } ものしりメガネ
-                    %option{ value: "38" } ラムのみ
-                    %option{ value: "39" } レッドカード
-            -# ---- ステータス ---- #-
-            .pokemon-container__current-statuses
-              .label-current-status
-                ステータス
-                .form-current-status
-                  .form-current-status__hp
-                    H
-                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__attack
-                    A
-                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__defense
-                    B
-                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-attack
-                    C
-                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-defense
-                    D
-                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__speed
-                    S
-                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 努力値 ---- #-
-            .pokemon-container__effort-values
-              .label-effort-value
-                努力値
-                .form-effort-value
-                  .form-effort-value__hp
-                    H
-                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__attack
-                    A
-                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__defense
-                    B
-                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special-attack
-                    C
-                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special_defense
-                    D
-                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__speed
-                    S
-                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 技 ---- #-
-            .pokemon-container__moves
-              .label-move
-                わざ
-                .form-move__top
-                  .form-move__top__move1
-                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__top__move2
-                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
-                .form-move__bottom
-                  .form-move__bottom__move3
-                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__bottom__move4
-                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+        .party__wrap__center
 
-      .party__wrap__center
+          -# ------------------------ 3匹目 ------------------------ #-
+          .party__wrap__center__pokemon3
+            .pokemon-container
+              = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
+              3rd
+              .pokemon-container__top
+                -# ---- ポケモン ---- #-
+                .pokemon-container__top__name
+                  .label-name
+                    ポケモン
+                  .form-name
+                    = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                -# ---- ニックネーム ---- #-
+                .pokemon-container__top__nickname
+                  .label-nickname
+                    ニックネーム
+                  .form-nickname
+                    = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                -# ---- 性別 ---- #-
+                .pokemon-container__top__gender
+                  .label-gender
+                    性別
+                  .form-gender
+                    %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
+                      %option{ value: "" }  ----
+                      %option{ value: "1" } ♂
+                      %option{ value: "2" } ♀
+                      %option{ value: "3" } 不明
+              -# ----種族値---- #-
+              .pokemon-container__base-statuses
+                .label-base-status
+                  種族値
+                .form-base-status
+                  .form-base-status__hp
+                    H
+                    = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__attack
+                    A
+                    = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__defense
+                    B
+                    = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-attack
+                    C
+                    = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-defense
+                    D
+                    = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__speed
+                    S
+                    = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              .pokemon-container__center
+                -# ---- 特性 ---- #-
+                .pokemon-container__center__ability
+                  .label-ability
+                    特性
+                  .form-ability
+                    = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                -# ---- 性格 ---- #-
+                .pokemon-container__center__nature
+                  .label-nature
+                    性格
+                  .form-nature
+                    = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                -# ---- 持ち物 ---- #-
+                .pokemon-container__center__item
+                  .label-item
+                    持ち物
+                  .form-item
+                    %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
+                      %option{ value: ""  }  ----
+                      %option{ value: "1" }  あつぞこブーツ
+                      %option{ value: "2" }  いのちのたま
+                      %option{ value: "3" }  おうじゃのしるし
+                      %option{ value: "4" }  回復系きのみ
+                      %option{ value: "5" }  かえんだま
+                      %option{ value: "6" }  からぶりほけん
+                      %option{ value: "7" }  きあいのタスキ
+                      %option{ value: "8" }  くろいてっきゅう
+                      %option{ value: "9" }  くろいヘドロ
+                      %option{ value: "10" } くろいメガネ
+                      %option{ value: "11" } こだわりスカーフ
+                      %option{ value: "12" } こだわりハチマキ
+                      %option{ value: "13" } こだわりメガネ
+                      %option{ value: "14" } ゴツゴツメット
+                      %option{ value: "15" } じしゃく
+                      %option{ value: "16" } じゃくてんほけん
+                      %option{ value: "17" } シルクのスカーフ
+                      %option{ value: "18" } しろいハーブ
+                      %option{ value: "19" } しんかのきせき
+                      %option{ value: "20" } せいれいプレート
+                      %option{ value: "21" } せんせいのつめ
+                      %option{ value: "22" } だっしゅつパック
+                      %option{ value: "23" } だっしゅつボタン
+                      %option{ value: "24" } たつじんのおび
+                      %option{ value: "25" } たべのこし
+                      %option{ value: "26" } ちからのハチマキ
+                      %option{ value: "27" } でんきだま
+                      %option{ value: "28" } とつげきチョッキ
+                      %option{ value: "29" } どくどくだま
+                      %option{ value: "30" } のどスプレー
+                      %option{ value: "31" } ひかりのねんど
+                      %option{ value: "32" } ピントレンズ
+                      %option{ value: "33" } ふうせん
+                      %option{ value: "34" } ぼうじんゴーグル
+                      %option{ value: "35" } フォーカスレンズ
+                      %option{ value: "36" } メンタルハーブ
+                      %option{ value: "37" } ものしりメガネ
+                      %option{ value: "38" } ラムのみ
+                      %option{ value: "39" } レッドカード
+              -# ---- ステータス ---- #-
+              .pokemon-container__current-statuses
+                .label-current-status
+                  ステータス
+                  .form-current-status
+                    .form-current-status__hp
+                      H
+                      = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__attack
+                      A
+                      = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__defense
+                      B
+                      = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-attack
+                      C
+                      = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-defense
+                      D
+                      = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__speed
+                      S
+                      = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 努力値 ---- #-
+              .pokemon-container__effort-values
+                .label-effort-value
+                  努力値
+                  .form-effort-value
+                    .form-effort-value__hp
+                      H
+                      = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__attack
+                      A
+                      = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__defense
+                      B
+                      = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special-attack
+                      C
+                      = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special_defense
+                      D
+                      = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__speed
+                      S
+                      = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 技 ---- #-
+              .pokemon-container__moves
+                .label-move
+                  わざ
+                  .form-move__top
+                    .form-move__top__move1
+                      = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__top__move2
+                      = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
+                  .form-move__bottom
+                    .form-move__bottom__move3
+                      = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__bottom__move4
+                      = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+          
+          -# ------------------------ 4匹目 ------------------------ #-
+          .party__wrap__center__pokemon4
+            .pokemon-container
+              = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
+              4th
+              .pokemon-container__top
+                -# ---- ポケモン ---- #-
+                .pokemon-container__top__name
+                  .label-name
+                    ポケモン
+                  .form-name
+                    = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                -# ---- ニックネーム ---- #-
+                .pokemon-container__top__nickname
+                  .label-nickname
+                    ニックネーム
+                  .form-nickname
+                    = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                -# ---- 性別 ---- #-
+                .pokemon-container__top__gender
+                  .label-gender
+                    性別
+                  .form-gender
+                    %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
+                      %option{ value: "" }  ----
+                      %option{ value: "1" } ♂
+                      %option{ value: "2" } ♀
+                      %option{ value: "3" } 不明
+              -# ----種族値---- #-
+              .pokemon-container__base-statuses
+                .label-base-status
+                  種族値
+                .form-base-status
+                  .form-base-status__hp
+                    H
+                    = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__attack
+                    A
+                    = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__defense
+                    B
+                    = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-attack
+                    C
+                    = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-defense
+                    D
+                    = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__speed
+                    S
+                    = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              .pokemon-container__center
+                -# ---- 特性 ---- #-
+                .pokemon-container__center__ability
+                  .label-ability
+                    特性
+                  .form-ability
+                    = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                -# ---- 性格 ---- #-
+                .pokemon-container__center__nature
+                  .label-nature
+                    性格
+                  .form-nature
+                    = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                -# ---- 持ち物 ---- #-
+                .pokemon-container__center__item
+                  .label-item
+                    持ち物
+                  .form-item
+                    %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
+                      %option{ value: ""  }  ----
+                      %option{ value: "1" }  あつぞこブーツ
+                      %option{ value: "2" }  いのちのたま
+                      %option{ value: "3" }  おうじゃのしるし
+                      %option{ value: "4" }  回復系きのみ
+                      %option{ value: "5" }  かえんだま
+                      %option{ value: "6" }  からぶりほけん
+                      %option{ value: "7" }  きあいのタスキ
+                      %option{ value: "8" }  くろいてっきゅう
+                      %option{ value: "9" }  くろいヘドロ
+                      %option{ value: "10" } くろいメガネ
+                      %option{ value: "11" } こだわりスカーフ
+                      %option{ value: "12" } こだわりハチマキ
+                      %option{ value: "13" } こだわりメガネ
+                      %option{ value: "14" } ゴツゴツメット
+                      %option{ value: "15" } じしゃく
+                      %option{ value: "16" } じゃくてんほけん
+                      %option{ value: "17" } シルクのスカーフ
+                      %option{ value: "18" } しろいハーブ
+                      %option{ value: "19" } しんかのきせき
+                      %option{ value: "20" } せいれいプレート
+                      %option{ value: "21" } せんせいのつめ
+                      %option{ value: "22" } だっしゅつパック
+                      %option{ value: "23" } だっしゅつボタン
+                      %option{ value: "24" } たつじんのおび
+                      %option{ value: "25" } たべのこし
+                      %option{ value: "26" } ちからのハチマキ
+                      %option{ value: "27" } でんきだま
+                      %option{ value: "28" } とつげきチョッキ
+                      %option{ value: "29" } どくどくだま
+                      %option{ value: "30" } のどスプレー
+                      %option{ value: "31" } ひかりのねんど
+                      %option{ value: "32" } ピントレンズ
+                      %option{ value: "33" } ふうせん
+                      %option{ value: "34" } ぼうじんゴーグル
+                      %option{ value: "35" } フォーカスレンズ
+                      %option{ value: "36" } メンタルハーブ
+                      %option{ value: "37" } ものしりメガネ
+                      %option{ value: "38" } ラムのみ
+                      %option{ value: "39" } レッドカード
+              -# ---- ステータス ---- #-
+              .pokemon-container__current-statuses
+                .label-current-status
+                  ステータス
+                  .form-current-status
+                    .form-current-status__hp
+                      H
+                      = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__attack
+                      A
+                      = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__defense
+                      B
+                      = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-attack
+                      C
+                      = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-defense
+                      D
+                      = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__speed
+                      S
+                      = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 努力値 ---- #-
+              .pokemon-container__effort-values
+                .label-effort-value
+                  努力値
+                  .form-effort-value
+                    .form-effort-value__hp
+                      H
+                      = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__attack
+                      A
+                      = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__defense
+                      B
+                      = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special-attack
+                      C
+                      = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special_defense
+                      D
+                      = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__speed
+                      S
+                      = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 技 ---- #-
+              .pokemon-container__moves
+                .label-move
+                  わざ
+                  .form-move__top
+                    .form-move__top__move1
+                      = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__top__move2
+                      = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
+                  .form-move__bottom
+                    .form-move__bottom__move3
+                      = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__bottom__move4
+                      = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
 
-        -# ------------------------ 3匹目 ------------------------ #-
-        .party__wrap__center__pokemon3
-          .pokemon-container
-            = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
-            3rd
-            .pokemon-container__top
-              -# ---- ポケモン ---- #-
-              .pokemon-container__top__name
-                .label-name
-                  ポケモン
-                .form-name
-                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
-              -# ---- ニックネーム ---- #-
-              .pokemon-container__top__nickname
-                .label-nickname
-                  ニックネーム
-                .form-nickname
-                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
-              -# ---- 性別 ---- #-
-              .pokemon-container__top__gender
-                .label-gender
-                  性別
-                .form-gender
-                  %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
-                    %option{ value: "" }  ----
-                    %option{ value: "1" } ♂
-                    %option{ value: "2" } ♀
-                    %option{ value: "3" } 不明
-            -# ----種族値---- #-
-            .pokemon-container__base-statuses
-              .label-base-status
-                種族値
-              .form-base-status
-                .form-base-status__hp
-                  H
-                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__attack
-                  A
-                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__defense
-                  B
-                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-attack
-                  C
-                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-defense
-                  D
-                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__speed
-                  S
-                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            .pokemon-container__center
-              -# ---- 特性 ---- #-
-              .pokemon-container__center__ability
-                .label-ability
-                  特性
-                .form-ability
-                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
-              -# ---- 性格 ---- #-
-              .pokemon-container__center__nature
-                .label-nature
-                  性格
-                .form-nature
-                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
-              -# ---- 持ち物 ---- #-
-              .pokemon-container__center__item
-                .label-item
-                  持ち物
-                .form-item
-                  %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
-                    %option{ value: ""  }  ----
-                    %option{ value: "1" }  あつぞこブーツ
-                    %option{ value: "2" }  いのちのたま
-                    %option{ value: "3" }  おうじゃのしるし
-                    %option{ value: "4" }  回復系きのみ
-                    %option{ value: "5" }  かえんだま
-                    %option{ value: "6" }  からぶりほけん
-                    %option{ value: "7" }  きあいのタスキ
-                    %option{ value: "8" }  くろいてっきゅう
-                    %option{ value: "9" }  くろいヘドロ
-                    %option{ value: "10" } くろいメガネ
-                    %option{ value: "11" } こだわりスカーフ
-                    %option{ value: "12" } こだわりハチマキ
-                    %option{ value: "13" } こだわりメガネ
-                    %option{ value: "14" } ゴツゴツメット
-                    %option{ value: "15" } じしゃく
-                    %option{ value: "16" } じゃくてんほけん
-                    %option{ value: "17" } シルクのスカーフ
-                    %option{ value: "18" } しろいハーブ
-                    %option{ value: "19" } しんかのきせき
-                    %option{ value: "20" } せいれいプレート
-                    %option{ value: "21" } せんせいのつめ
-                    %option{ value: "22" } だっしゅつパック
-                    %option{ value: "23" } だっしゅつボタン
-                    %option{ value: "24" } たつじんのおび
-                    %option{ value: "25" } たべのこし
-                    %option{ value: "26" } ちからのハチマキ
-                    %option{ value: "27" } でんきだま
-                    %option{ value: "28" } とつげきチョッキ
-                    %option{ value: "29" } どくどくだま
-                    %option{ value: "30" } のどスプレー
-                    %option{ value: "31" } ひかりのねんど
-                    %option{ value: "32" } ピントレンズ
-                    %option{ value: "33" } ふうせん
-                    %option{ value: "34" } ぼうじんゴーグル
-                    %option{ value: "35" } フォーカスレンズ
-                    %option{ value: "36" } メンタルハーブ
-                    %option{ value: "37" } ものしりメガネ
-                    %option{ value: "38" } ラムのみ
-                    %option{ value: "39" } レッドカード
-            -# ---- ステータス ---- #-
-            .pokemon-container__current-statuses
-              .label-current-status
-                ステータス
-                .form-current-status
-                  .form-current-status__hp
-                    H
-                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__attack
-                    A
-                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__defense
-                    B
-                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-attack
-                    C
-                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-defense
-                    D
-                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__speed
-                    S
-                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 努力値 ---- #-
-            .pokemon-container__effort-values
-              .label-effort-value
-                努力値
-                .form-effort-value
-                  .form-effort-value__hp
-                    H
-                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__attack
-                    A
-                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__defense
-                    B
-                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special-attack
-                    C
-                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special_defense
-                    D
-                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__speed
-                    S
-                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 技 ---- #-
-            .pokemon-container__moves
-              .label-move
-                わざ
-                .form-move__top
-                  .form-move__top__move1
-                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__top__move2
-                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
-                .form-move__bottom
-                  .form-move__bottom__move3
-                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__bottom__move4
-                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
-        
-        -# ------------------------ 4匹目 ------------------------ #-
-        .party__wrap__center__pokemon4
-          .pokemon-container
-            = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
-            4th
-            .pokemon-container__top
-              -# ---- ポケモン ---- #-
-              .pokemon-container__top__name
-                .label-name
-                  ポケモン
-                .form-name
-                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
-              -# ---- ニックネーム ---- #-
-              .pokemon-container__top__nickname
-                .label-nickname
-                  ニックネーム
-                .form-nickname
-                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
-              -# ---- 性別 ---- #-
-              .pokemon-container__top__gender
-                .label-gender
-                  性別
-                .form-gender
-                  %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
-                    %option{ value: "" }  ----
-                    %option{ value: "1" } ♂
-                    %option{ value: "2" } ♀
-                    %option{ value: "3" } 不明
-            -# ----種族値---- #-
-            .pokemon-container__base-statuses
-              .label-base-status
-                種族値
-              .form-base-status
-                .form-base-status__hp
-                  H
-                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__attack
-                  A
-                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__defense
-                  B
-                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-attack
-                  C
-                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-defense
-                  D
-                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__speed
-                  S
-                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            .pokemon-container__center
-              -# ---- 特性 ---- #-
-              .pokemon-container__center__ability
-                .label-ability
-                  特性
-                .form-ability
-                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
-              -# ---- 性格 ---- #-
-              .pokemon-container__center__nature
-                .label-nature
-                  性格
-                .form-nature
-                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
-              -# ---- 持ち物 ---- #-
-              .pokemon-container__center__item
-                .label-item
-                  持ち物
-                .form-item
-                  %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
-                    %option{ value: ""  }  ----
-                    %option{ value: "1" }  あつぞこブーツ
-                    %option{ value: "2" }  いのちのたま
-                    %option{ value: "3" }  おうじゃのしるし
-                    %option{ value: "4" }  回復系きのみ
-                    %option{ value: "5" }  かえんだま
-                    %option{ value: "6" }  からぶりほけん
-                    %option{ value: "7" }  きあいのタスキ
-                    %option{ value: "8" }  くろいてっきゅう
-                    %option{ value: "9" }  くろいヘドロ
-                    %option{ value: "10" } くろいメガネ
-                    %option{ value: "11" } こだわりスカーフ
-                    %option{ value: "12" } こだわりハチマキ
-                    %option{ value: "13" } こだわりメガネ
-                    %option{ value: "14" } ゴツゴツメット
-                    %option{ value: "15" } じしゃく
-                    %option{ value: "16" } じゃくてんほけん
-                    %option{ value: "17" } シルクのスカーフ
-                    %option{ value: "18" } しろいハーブ
-                    %option{ value: "19" } しんかのきせき
-                    %option{ value: "20" } せいれいプレート
-                    %option{ value: "21" } せんせいのつめ
-                    %option{ value: "22" } だっしゅつパック
-                    %option{ value: "23" } だっしゅつボタン
-                    %option{ value: "24" } たつじんのおび
-                    %option{ value: "25" } たべのこし
-                    %option{ value: "26" } ちからのハチマキ
-                    %option{ value: "27" } でんきだま
-                    %option{ value: "28" } とつげきチョッキ
-                    %option{ value: "29" } どくどくだま
-                    %option{ value: "30" } のどスプレー
-                    %option{ value: "31" } ひかりのねんど
-                    %option{ value: "32" } ピントレンズ
-                    %option{ value: "33" } ふうせん
-                    %option{ value: "34" } ぼうじんゴーグル
-                    %option{ value: "35" } フォーカスレンズ
-                    %option{ value: "36" } メンタルハーブ
-                    %option{ value: "37" } ものしりメガネ
-                    %option{ value: "38" } ラムのみ
-                    %option{ value: "39" } レッドカード
-            -# ---- ステータス ---- #-
-            .pokemon-container__current-statuses
-              .label-current-status
-                ステータス
-                .form-current-status
-                  .form-current-status__hp
-                    H
-                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__attack
-                    A
-                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__defense
-                    B
-                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-attack
-                    C
-                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-defense
-                    D
-                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__speed
-                    S
-                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 努力値 ---- #-
-            .pokemon-container__effort-values
-              .label-effort-value
-                努力値
-                .form-effort-value
-                  .form-effort-value__hp
-                    H
-                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__attack
-                    A
-                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__defense
-                    B
-                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special-attack
-                    C
-                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special_defense
-                    D
-                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__speed
-                    S
-                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 技 ---- #-
-            .pokemon-container__moves
-              .label-move
-                わざ
-                .form-move__top
-                  .form-move__top__move1
-                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__top__move2
-                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
-                .form-move__bottom
-                  .form-move__bottom__move3
-                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__bottom__move4
-                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+        .party__wrap__bottom
 
-      .party__wrap__bottom
+          -# ------------------------ 5匹目 ------------------------ #-
+          .party__wrap__bottom__pokemon5
+            .pokemon-container
+              = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
+              5th
+              .pokemon-container__top
+                -# ---- ポケモン ---- #-
+                .pokemon-container__top__name
+                  .label-name
+                    ポケモン
+                  .form-name
+                    = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                -# ---- ニックネーム ---- #-
+                .pokemon-container__top__nickname
+                  .label-nickname
+                    ニックネーム
+                  .form-nickname
+                    = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                -# ---- 性別 ---- #-
+                .pokemon-container__top__gender
+                  .label-gender
+                    性別
+                  .form-gender
+                    %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
+                      %option{ value: "" }  ----
+                      %option{ value: "1" } ♂
+                      %option{ value: "2" } ♀
+                      %option{ value: "3" } 不明
+              -# ----種族値---- #-
+              .pokemon-container__base-statuses
+                .label-base-status
+                  種族値
+                .form-base-status
+                  .form-base-status__hp
+                    H
+                    = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__attack
+                    A
+                    = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__defense
+                    B
+                    = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-attack
+                    C
+                    = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-defense
+                    D
+                    = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__speed
+                    S
+                    = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              .pokemon-container__center
+                -# ---- 特性 ---- #-
+                .pokemon-container__center__ability
+                  .label-ability
+                    特性
+                  .form-ability
+                    = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                -# ---- 性格 ---- #-
+                .pokemon-container__center__nature
+                  .label-nature
+                    性格
+                  .form-nature
+                    = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                -# ---- 持ち物 ---- #-
+                .pokemon-container__center__item
+                  .label-item
+                    持ち物
+                  .form-item
+                    %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
+                      %option{ value: ""  }  ----
+                      %option{ value: "1" }  あつぞこブーツ
+                      %option{ value: "2" }  いのちのたま
+                      %option{ value: "3" }  おうじゃのしるし
+                      %option{ value: "4" }  回復系きのみ
+                      %option{ value: "5" }  かえんだま
+                      %option{ value: "6" }  からぶりほけん
+                      %option{ value: "7" }  きあいのタスキ
+                      %option{ value: "8" }  くろいてっきゅう
+                      %option{ value: "9" }  くろいヘドロ
+                      %option{ value: "10" } くろいメガネ
+                      %option{ value: "11" } こだわりスカーフ
+                      %option{ value: "12" } こだわりハチマキ
+                      %option{ value: "13" } こだわりメガネ
+                      %option{ value: "14" } ゴツゴツメット
+                      %option{ value: "15" } じしゃく
+                      %option{ value: "16" } じゃくてんほけん
+                      %option{ value: "17" } シルクのスカーフ
+                      %option{ value: "18" } しろいハーブ
+                      %option{ value: "19" } しんかのきせき
+                      %option{ value: "20" } せいれいプレート
+                      %option{ value: "21" } せんせいのつめ
+                      %option{ value: "22" } だっしゅつパック
+                      %option{ value: "23" } だっしゅつボタン
+                      %option{ value: "24" } たつじんのおび
+                      %option{ value: "25" } たべのこし
+                      %option{ value: "26" } ちからのハチマキ
+                      %option{ value: "27" } でんきだま
+                      %option{ value: "28" } とつげきチョッキ
+                      %option{ value: "29" } どくどくだま
+                      %option{ value: "30" } のどスプレー
+                      %option{ value: "31" } ひかりのねんど
+                      %option{ value: "32" } ピントレンズ
+                      %option{ value: "33" } ふうせん
+                      %option{ value: "34" } ぼうじんゴーグル
+                      %option{ value: "35" } フォーカスレンズ
+                      %option{ value: "36" } メンタルハーブ
+                      %option{ value: "37" } ものしりメガネ
+                      %option{ value: "38" } ラムのみ
+                      %option{ value: "39" } レッドカード
+              -# ---- ステータス ---- #-
+              .pokemon-container__current-statuses
+                .label-current-status
+                  ステータス
+                  .form-current-status
+                    .form-current-status__hp
+                      H
+                      = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__attack
+                      A
+                      = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__defense
+                      B
+                      = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-attack
+                      C
+                      = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-defense
+                      D
+                      = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__speed
+                      S
+                      = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 努力値 ---- #-
+              .pokemon-container__effort-values
+                .label-effort-value
+                  努力値
+                  .form-effort-value
+                    .form-effort-value__hp
+                      H
+                      = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__attack
+                      A
+                      = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__defense
+                      B
+                      = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special-attack
+                      C
+                      = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special_defense
+                      D
+                      = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__speed
+                      S
+                      = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 技 ---- #-
+              .pokemon-container__moves
+                .label-move
+                  わざ
+                  .form-move__top
+                    .form-move__top__move1
+                      = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__top__move2
+                      = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text"
+                  .form-move__bottom
+                    .form-move__bottom__move3
+                      = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__bottom__move4
+                      = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
 
-        -# ------------------------ 5匹目 ------------------------ #-
-        .party__wrap__bottom__pokemon5
-          .pokemon-container
-            = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
-            5th
-            .pokemon-container__top
-              -# ---- ポケモン ---- #-
-              .pokemon-container__top__name
-                .label-name
-                  ポケモン
-                .form-name
-                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
-              -# ---- ニックネーム ---- #-
-              .pokemon-container__top__nickname
-                .label-nickname
-                  ニックネーム
-                .form-nickname
-                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
-              -# ---- 性別 ---- #-
-              .pokemon-container__top__gender
-                .label-gender
-                  性別
-                .form-gender
-                  %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
-                    %option{ value: "" }  ----
-                    %option{ value: "1" } ♂
-                    %option{ value: "2" } ♀
-                    %option{ value: "3" } 不明
-            -# ----種族値---- #-
-            .pokemon-container__base-statuses
-              .label-base-status
-                種族値
-              .form-base-status
-                .form-base-status__hp
-                  H
-                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__attack
-                  A
-                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__defense
-                  B
-                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-attack
-                  C
-                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-defense
-                  D
-                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__speed
-                  S
-                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            .pokemon-container__center
-              -# ---- 特性 ---- #-
-              .pokemon-container__center__ability
-                .label-ability
-                  特性
-                .form-ability
-                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
-              -# ---- 性格 ---- #-
-              .pokemon-container__center__nature
-                .label-nature
-                  性格
-                .form-nature
-                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
-              -# ---- 持ち物 ---- #-
-              .pokemon-container__center__item
-                .label-item
-                  持ち物
-                .form-item
-                  %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
-                    %option{ value: ""  }  ----
-                    %option{ value: "1" }  あつぞこブーツ
-                    %option{ value: "2" }  いのちのたま
-                    %option{ value: "3" }  おうじゃのしるし
-                    %option{ value: "4" }  回復系きのみ
-                    %option{ value: "5" }  かえんだま
-                    %option{ value: "6" }  からぶりほけん
-                    %option{ value: "7" }  きあいのタスキ
-                    %option{ value: "8" }  くろいてっきゅう
-                    %option{ value: "9" }  くろいヘドロ
-                    %option{ value: "10" } くろいメガネ
-                    %option{ value: "11" } こだわりスカーフ
-                    %option{ value: "12" } こだわりハチマキ
-                    %option{ value: "13" } こだわりメガネ
-                    %option{ value: "14" } ゴツゴツメット
-                    %option{ value: "15" } じしゃく
-                    %option{ value: "16" } じゃくてんほけん
-                    %option{ value: "17" } シルクのスカーフ
-                    %option{ value: "18" } しろいハーブ
-                    %option{ value: "19" } しんかのきせき
-                    %option{ value: "20" } せいれいプレート
-                    %option{ value: "21" } せんせいのつめ
-                    %option{ value: "22" } だっしゅつパック
-                    %option{ value: "23" } だっしゅつボタン
-                    %option{ value: "24" } たつじんのおび
-                    %option{ value: "25" } たべのこし
-                    %option{ value: "26" } ちからのハチマキ
-                    %option{ value: "27" } でんきだま
-                    %option{ value: "28" } とつげきチョッキ
-                    %option{ value: "29" } どくどくだま
-                    %option{ value: "30" } のどスプレー
-                    %option{ value: "31" } ひかりのねんど
-                    %option{ value: "32" } ピントレンズ
-                    %option{ value: "33" } ふうせん
-                    %option{ value: "34" } ぼうじんゴーグル
-                    %option{ value: "35" } フォーカスレンズ
-                    %option{ value: "36" } メンタルハーブ
-                    %option{ value: "37" } ものしりメガネ
-                    %option{ value: "38" } ラムのみ
-                    %option{ value: "39" } レッドカード
-            -# ---- ステータス ---- #-
-            .pokemon-container__current-statuses
-              .label-current-status
-                ステータス
-                .form-current-status
-                  .form-current-status__hp
+          -# ------------------------ 6匹目 ------------------------ #-
+          .party__wrap__bottom__pokemon6
+            .pokemon-container
+              = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
+              6th
+              .pokemon-container__top
+                -# ---- ポケモン ---- #-
+                .pokemon-container__top__name
+                  .label-name
+                    ポケモン
+                  .form-name
+                    = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                -# ---- ニックネーム ---- #-
+                .pokemon-container__top__nickname
+                  .label-nickname
+                    ニックネーム
+                  .form-nickname
+                    = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                -# ---- 性別 ---- #-
+                .pokemon-container__top__gender
+                  .label-gender
+                    性別
+                  .form-gender
+                    %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
+                      %option{ value: "" }  ----
+                      %option{ value: "1" } ♂
+                      %option{ value: "2" } ♀
+                      %option{ value: "3" } 不明
+              -# ----種族値---- #-
+              .pokemon-container__base-statuses
+                .label-base-status
+                  種族値
+                .form-base-status
+                  .form-base-status__hp
                     H
-                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__attack
+                    = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__attack
                     A
-                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__defense
+                    = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__defense
                     B
-                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-attack
+                    = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-attack
                     C
-                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-defense
+                    = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__special-defense
                     D
-                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__speed
+                    = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  .form-base-status__speed
                     S
-                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 努力値 ---- #-
-            .pokemon-container__effort-values
-              .label-effort-value
-                努力値
-                .form-effort-value
-                  .form-effort-value__hp
-                    H
-                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__attack
-                    A
-                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__defense
-                    B
-                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special-attack
-                    C
-                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special_defense
-                    D
-                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__speed
-                    S
-                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 技 ---- #-
-            .pokemon-container__moves
-              .label-move
-                わざ
-                .form-move__top
-                  .form-move__top__move1
-                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__top__move2
-                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text"
-                .form-move__bottom
-                  .form-move__bottom__move3
-                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__bottom__move4
-                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
-
-        -# ------------------------ 6匹目 ------------------------ #-
-        .party__wrap__bottom__pokemon6
-          .pokemon-container
-            = icon 'fas', 'angle-double-down', class: "angle-double-down-icon"
-            6th
-            .pokemon-container__top
-              -# ---- ポケモン ---- #-
-              .pokemon-container__top__name
-                .label-name
-                  ポケモン
-                .form-name
-                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
-              -# ---- ニックネーム ---- #-
-              .pokemon-container__top__nickname
-                .label-nickname
-                  ニックネーム
-                .form-nickname
-                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
-              -# ---- 性別 ---- #-
-              .pokemon-container__top__gender
-                .label-gender
-                  性別
-                .form-gender
-                  %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
-                    %option{ value: "" }  ----
-                    %option{ value: "1" } ♂
-                    %option{ value: "2" } ♀
-                    %option{ value: "3" } 不明
-            -# ----種族値---- #-
-            .pokemon-container__base-statuses
-              .label-base-status
-                種族値
-              .form-base-status
-                .form-base-status__hp
-                  H
-                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__attack
-                  A
-                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__defense
-                  B
-                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-attack
-                  C
-                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__special-defense
-                  D
-                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                .form-base-status__speed
-                  S
-                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            .pokemon-container__center
-              -# ---- 特性 ---- #-
-              .pokemon-container__center__ability
-                .label-ability
-                  特性
-                .form-ability
-                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
-              -# ---- 性格 ---- #-
-              .pokemon-container__center__nature
-                .label-nature
-                  性格
-                .form-nature
-                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
-              -# ---- 持ち物 ---- #-
-              .pokemon-container__center__item
-                .label-item
-                  持ち物
-                .form-item
-                  %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
-                    %option{ value: ""  }  ----
-                    %option{ value: "1" }  あつぞこブーツ
-                    %option{ value: "2" }  いのちのたま
-                    %option{ value: "3" }  おうじゃのしるし
-                    %option{ value: "4" }  回復系きのみ
-                    %option{ value: "5" }  かえんだま
-                    %option{ value: "6" }  からぶりほけん
-                    %option{ value: "7" }  きあいのタスキ
-                    %option{ value: "8" }  くろいてっきゅう
-                    %option{ value: "9" }  くろいヘドロ
-                    %option{ value: "10" } くろいメガネ
-                    %option{ value: "11" } こだわりスカーフ
-                    %option{ value: "12" } こだわりハチマキ
-                    %option{ value: "13" } こだわりメガネ
-                    %option{ value: "14" } ゴツゴツメット
-                    %option{ value: "15" } じしゃく
-                    %option{ value: "16" } じゃくてんほけん
-                    %option{ value: "17" } シルクのスカーフ
-                    %option{ value: "18" } しろいハーブ
-                    %option{ value: "19" } しんかのきせき
-                    %option{ value: "20" } せいれいプレート
-                    %option{ value: "21" } せんせいのつめ
-                    %option{ value: "22" } だっしゅつパック
-                    %option{ value: "23" } だっしゅつボタン
-                    %option{ value: "24" } たつじんのおび
-                    %option{ value: "25" } たべのこし
-                    %option{ value: "26" } ちからのハチマキ
-                    %option{ value: "27" } でんきだま
-                    %option{ value: "28" } とつげきチョッキ
-                    %option{ value: "29" } どくどくだま
-                    %option{ value: "30" } のどスプレー
-                    %option{ value: "31" } ひかりのねんど
-                    %option{ value: "32" } ピントレンズ
-                    %option{ value: "33" } ふうせん
-                    %option{ value: "34" } ぼうじんゴーグル
-                    %option{ value: "35" } フォーカスレンズ
-                    %option{ value: "36" } メンタルハーブ
-                    %option{ value: "37" } ものしりメガネ
-                    %option{ value: "38" } ラムのみ
-                    %option{ value: "39" } レッドカード
-            -# ---- ステータス ---- #-
-            .pokemon-container__current-statuses
-              .label-current-status
-                ステータス
-                .form-current-status
-                  .form-current-status__hp
-                    H
-                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__attack
-                    A
-                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__defense
-                    B
-                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-attack
-                    C
-                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__special-defense
-                    D
-                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-current-status__speed
-                    S
-                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 努力値 ---- #-
-            .pokemon-container__effort-values
-              .label-effort-value
-                努力値
-                .form-effort-value
-                  .form-effort-value__hp
-                    H
-                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__attack
-                    A
-                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__defense
-                    B
-                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special-attack
-                    C
-                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__special_defense
-                    D
-                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
-                  .form-effort-value__speed
-                    S
-                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
-            -# ---- 技 ---- #-
-            .pokemon-container__moves
-              .label-move
-                わざ
-                .form-move__top
-                  .form-move__top__move1
-                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__top__move2
-                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
-                .form-move__bottom
-                  .form-move__bottom__move3
-                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
-                  .form-move__bottom__move4
-                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              .pokemon-container__center
+                -# ---- 特性 ---- #-
+                .pokemon-container__center__ability
+                  .label-ability
+                    特性
+                  .form-ability
+                    = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                -# ---- 性格 ---- #-
+                .pokemon-container__center__nature
+                  .label-nature
+                    性格
+                  .form-nature
+                    = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                -# ---- 持ち物 ---- #-
+                .pokemon-container__center__item
+                  .label-item
+                    持ち物
+                  .form-item
+                    %select{ name: "exp_item", type: "text", class: "form-item__input", id: "exp_item" }
+                      %option{ value: ""  }  ----
+                      %option{ value: "1" }  あつぞこブーツ
+                      %option{ value: "2" }  いのちのたま
+                      %option{ value: "3" }  おうじゃのしるし
+                      %option{ value: "4" }  回復系きのみ
+                      %option{ value: "5" }  かえんだま
+                      %option{ value: "6" }  からぶりほけん
+                      %option{ value: "7" }  きあいのタスキ
+                      %option{ value: "8" }  くろいてっきゅう
+                      %option{ value: "9" }  くろいヘドロ
+                      %option{ value: "10" } くろいメガネ
+                      %option{ value: "11" } こだわりスカーフ
+                      %option{ value: "12" } こだわりハチマキ
+                      %option{ value: "13" } こだわりメガネ
+                      %option{ value: "14" } ゴツゴツメット
+                      %option{ value: "15" } じしゃく
+                      %option{ value: "16" } じゃくてんほけん
+                      %option{ value: "17" } シルクのスカーフ
+                      %option{ value: "18" } しろいハーブ
+                      %option{ value: "19" } しんかのきせき
+                      %option{ value: "20" } せいれいプレート
+                      %option{ value: "21" } せんせいのつめ
+                      %option{ value: "22" } だっしゅつパック
+                      %option{ value: "23" } だっしゅつボタン
+                      %option{ value: "24" } たつじんのおび
+                      %option{ value: "25" } たべのこし
+                      %option{ value: "26" } ちからのハチマキ
+                      %option{ value: "27" } でんきだま
+                      %option{ value: "28" } とつげきチョッキ
+                      %option{ value: "29" } どくどくだま
+                      %option{ value: "30" } のどスプレー
+                      %option{ value: "31" } ひかりのねんど
+                      %option{ value: "32" } ピントレンズ
+                      %option{ value: "33" } ふうせん
+                      %option{ value: "34" } ぼうじんゴーグル
+                      %option{ value: "35" } フォーカスレンズ
+                      %option{ value: "36" } メンタルハーブ
+                      %option{ value: "37" } ものしりメガネ
+                      %option{ value: "38" } ラムのみ
+                      %option{ value: "39" } レッドカード
+              -# ---- ステータス ---- #-
+              .pokemon-container__current-statuses
+                .label-current-status
+                  ステータス
+                  .form-current-status
+                    .form-current-status__hp
+                      H
+                      = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__attack
+                      A
+                      = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__defense
+                      B
+                      = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-attack
+                      C
+                      = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__special-defense
+                      D
+                      = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-current-status__speed
+                      S
+                      = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 努力値 ---- #-
+              .pokemon-container__effort-values
+                .label-effort-value
+                  努力値
+                  .form-effort-value
+                    .form-effort-value__hp
+                      H
+                      = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__attack
+                      A
+                      = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__defense
+                      B
+                      = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special-attack
+                      C
+                      = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__special_defense
+                      D
+                      = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    .form-effort-value__speed
+                      S
+                      = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+              -# ---- 技 ---- #-
+              .pokemon-container__moves
+                .label-move
+                  わざ
+                  .form-move__top
+                    .form-move__top__move1
+                      = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__top__move2
+                      = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
+                  .form-move__bottom
+                    .form-move__bottom__move3
+                      = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    .form-move__bottom__move4
+                      = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
 
   .party-name
-    パーティ名
+    %label パーティ名
     = f.text_field :party_name, class: "party-name__input", maxlength: "6", type: "text", autocomplete: "off"
 
   .register-btn
