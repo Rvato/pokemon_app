@@ -1,6 +1,7 @@
 = form_with model: @party, local: true, class: "party-register" do |f|
   .party
     .party__wrap
+      = f.fields_for :pokemon do |pokemon|
 
       .party__wrap__top
 
@@ -15,13 +16,13 @@
                 .label-name
                   ポケモン
                 .form-name
-                  = f.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
               -# ---- ニックネーム ---- #-
               .pokemon-container__top__nickname
                 .label-nickname
                   ニックネーム
                 .form-nickname
-                  = f.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
               -# ---- 性別 ---- #-
               .pokemon-container__top__gender
                 .label-gender
@@ -39,35 +40,35 @@
               .form-base-status
                 .form-base-status__hp
                   H
-                  = f.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__attack
                   A
-                  = f.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__defense
                   B
-                  = f.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-attack
                   C
-                  = f.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-defense
                   D
-                  = f.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__speed
                   S
-                  = f.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             .pokemon-container__center
               -# ---- 特性 ---- #-
               .pokemon-container__center__ability
                 .label-ability
                   特性
                 .form-ability
-                  = f.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
               -# ---- 性格 ---- #-
               .pokemon-container__center__nature
                 .label-nature
                   性格
                 .form-nature
-                  = f.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
               -# ---- 持ち物 ---- #-
               .pokemon-container__center__item
                 .label-item
@@ -121,22 +122,22 @@
                 .form-current-status
                   .form-current-status__hp
                     H
-                    = f.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__attack
                     A
-                    = f.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__defense
                     B
-                    = f.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-attack
                     C
-                    = f.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-defense
                     D
-                    = f.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__speed
                     S
-                    = f.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 努力値 ---- #-
             .pokemon-container__effort-values
               .label-effort-value
@@ -144,36 +145,36 @@
                 .form-effort-value
                   .form-effort-value__hp
                     H
-                    = f.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__attack
                     A
-                    = f.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__defense
                     B
-                    = f.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special-attack
                     C
-                    = f.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special_defense
                     D
-                    = f.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__speed
                     S
-                    = f.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 技 ---- #-
             .pokemon-container__moves
               .label-move
                 わざ
                 .form-move__top
                   .form-move__top__move1
-                    = f.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__top__move2
-                    = f.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
                 .form-move__bottom
                   .form-move__bottom__move3
-                    = f.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__bottom__move4
-                    = f.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
         
         -# ------------------------ 2匹目 ------------------------ #-
         .party__wrap__top__pokemon2
@@ -186,13 +187,13 @@
                 .label-name
                   ポケモン
                 .form-name
-                  = f.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
               -# ---- ニックネーム ---- #-
               .pokemon-container__top__nickname
                 .label-nickname
                   ニックネーム
                 .form-nickname
-                  = f.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
               -# ---- 性別 ---- #-
               .pokemon-container__top__gender
                 .label-gender
@@ -210,35 +211,35 @@
               .form-base-status
                 .form-base-status__hp
                   H
-                  = f.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__attack
                   A
-                  = f.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__defense
                   B
-                  = f.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-attack
                   C
-                  = f.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-defense
                   D
-                  = f.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__speed
                   S
-                  = f.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             .pokemon-container__center
               -# ---- 特性 ---- #-
               .pokemon-container__center__ability
                 .label-ability
                   特性
                 .form-ability
-                  = f.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
               -# ---- 性格 ---- #-
               .pokemon-container__center__nature
                 .label-nature
                   性格
                 .form-nature
-                  = f.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
               -# ---- 持ち物 ---- #-
               .pokemon-container__center__item
                 .label-item
@@ -292,22 +293,22 @@
                 .form-current-status
                   .form-current-status__hp
                     H
-                    = f.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__attack
                     A
-                    = f.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__defense
                     B
-                    = f.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-attack
                     C
-                    = f.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-defense
                     D
-                    = f.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__speed
                     S
-                    = f.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 努力値 ---- #-
             .pokemon-container__effort-values
               .label-effort-value
@@ -315,36 +316,36 @@
                 .form-effort-value
                   .form-effort-value__hp
                     H
-                    = f.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__attack
                     A
-                    = f.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__defense
                     B
-                    = f.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special-attack
                     C
-                    = f.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special_defense
                     D
-                    = f.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__speed
                     S
-                    = f.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 技 ---- #-
             .pokemon-container__moves
               .label-move
                 わざ
                 .form-move__top
                   .form-move__top__move1
-                    = f.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__top__move2
-                    = f.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
                 .form-move__bottom
                   .form-move__bottom__move3
-                    = f.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__bottom__move4
-                    = f.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
 
       .party__wrap__center
 
@@ -359,13 +360,13 @@
                 .label-name
                   ポケモン
                 .form-name
-                  = f.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
               -# ---- ニックネーム ---- #-
               .pokemon-container__top__nickname
                 .label-nickname
                   ニックネーム
                 .form-nickname
-                  = f.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
               -# ---- 性別 ---- #-
               .pokemon-container__top__gender
                 .label-gender
@@ -383,35 +384,35 @@
               .form-base-status
                 .form-base-status__hp
                   H
-                  = f.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__attack
                   A
-                  = f.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__defense
                   B
-                  = f.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-attack
                   C
-                  = f.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-defense
                   D
-                  = f.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__speed
                   S
-                  = f.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             .pokemon-container__center
               -# ---- 特性 ---- #-
               .pokemon-container__center__ability
                 .label-ability
                   特性
                 .form-ability
-                  = f.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
               -# ---- 性格 ---- #-
               .pokemon-container__center__nature
                 .label-nature
                   性格
                 .form-nature
-                  = f.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
               -# ---- 持ち物 ---- #-
               .pokemon-container__center__item
                 .label-item
@@ -465,22 +466,22 @@
                 .form-current-status
                   .form-current-status__hp
                     H
-                    = f.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__attack
                     A
-                    = f.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__defense
                     B
-                    = f.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-attack
                     C
-                    = f.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-defense
                     D
-                    = f.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__speed
                     S
-                    = f.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 努力値 ---- #-
             .pokemon-container__effort-values
               .label-effort-value
@@ -488,36 +489,36 @@
                 .form-effort-value
                   .form-effort-value__hp
                     H
-                    = f.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__attack
                     A
-                    = f.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__defense
                     B
-                    = f.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special-attack
                     C
-                    = f.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special_defense
                     D
-                    = f.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__speed
                     S
-                    = f.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 技 ---- #-
             .pokemon-container__moves
               .label-move
                 わざ
                 .form-move__top
                   .form-move__top__move1
-                    = f.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__top__move2
-                    = f.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
                 .form-move__bottom
                   .form-move__bottom__move3
-                    = f.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__bottom__move4
-                    = f.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
         
         -# ------------------------ 4匹目 ------------------------ #-
         .party__wrap__center__pokemon4
@@ -530,13 +531,13 @@
                 .label-name
                   ポケモン
                 .form-name
-                  = f.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
               -# ---- ニックネーム ---- #-
               .pokemon-container__top__nickname
                 .label-nickname
                   ニックネーム
                 .form-nickname
-                  = f.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
               -# ---- 性別 ---- #-
               .pokemon-container__top__gender
                 .label-gender
@@ -554,35 +555,35 @@
               .form-base-status
                 .form-base-status__hp
                   H
-                  = f.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__attack
                   A
-                  = f.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__defense
                   B
-                  = f.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-attack
                   C
-                  = f.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-defense
                   D
-                  = f.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__speed
                   S
-                  = f.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             .pokemon-container__center
               -# ---- 特性 ---- #-
               .pokemon-container__center__ability
                 .label-ability
                   特性
                 .form-ability
-                  = f.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
               -# ---- 性格 ---- #-
               .pokemon-container__center__nature
                 .label-nature
                   性格
                 .form-nature
-                  = f.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
               -# ---- 持ち物 ---- #-
               .pokemon-container__center__item
                 .label-item
@@ -636,22 +637,22 @@
                 .form-current-status
                   .form-current-status__hp
                     H
-                    = f.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__attack
                     A
-                    = f.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__defense
                     B
-                    = f.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-attack
                     C
-                    = f.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-defense
                     D
-                    = f.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__speed
                     S
-                    = f.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 努力値 ---- #-
             .pokemon-container__effort-values
               .label-effort-value
@@ -659,36 +660,36 @@
                 .form-effort-value
                   .form-effort-value__hp
                     H
-                    = f.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__attack
                     A
-                    = f.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__defense
                     B
-                    = f.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special-attack
                     C
-                    = f.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special_defense
                     D
-                    = f.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__speed
                     S
-                    = f.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 技 ---- #-
             .pokemon-container__moves
               .label-move
                 わざ
                 .form-move__top
                   .form-move__top__move1
-                    = f.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__top__move2
-                    = f.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
                 .form-move__bottom
                   .form-move__bottom__move3
-                    = f.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__bottom__move4
-                    = f.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
 
       .party__wrap__bottom
 
@@ -703,13 +704,13 @@
                 .label-name
                   ポケモン
                 .form-name
-                  = f.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
               -# ---- ニックネーム ---- #-
               .pokemon-container__top__nickname
                 .label-nickname
                   ニックネーム
                 .form-nickname
-                  = f.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
               -# ---- 性別 ---- #-
               .pokemon-container__top__gender
                 .label-gender
@@ -727,35 +728,35 @@
               .form-base-status
                 .form-base-status__hp
                   H
-                  = f.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__attack
                   A
-                  = f.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__defense
                   B
-                  = f.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-attack
                   C
-                  = f.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-defense
                   D
-                  = f.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__speed
                   S
-                  = f.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             .pokemon-container__center
               -# ---- 特性 ---- #-
               .pokemon-container__center__ability
                 .label-ability
                   特性
                 .form-ability
-                  = f.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
               -# ---- 性格 ---- #-
               .pokemon-container__center__nature
                 .label-nature
                   性格
                 .form-nature
-                  = f.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
               -# ---- 持ち物 ---- #-
               .pokemon-container__center__item
                 .label-item
@@ -809,22 +810,22 @@
                 .form-current-status
                   .form-current-status__hp
                     H
-                    = f.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__attack
                     A
-                    = f.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__defense
                     B
-                    = f.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-attack
                     C
-                    = f.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-defense
                     D
-                    = f.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__speed
                     S
-                    = f.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 努力値 ---- #-
             .pokemon-container__effort-values
               .label-effort-value
@@ -832,36 +833,36 @@
                 .form-effort-value
                   .form-effort-value__hp
                     H
-                    = f.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__attack
                     A
-                    = f.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__defense
                     B
-                    = f.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special-attack
                     C
-                    = f.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special_defense
                     D
-                    = f.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__speed
                     S
-                    = f.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 技 ---- #-
             .pokemon-container__moves
               .label-move
                 わざ
                 .form-move__top
                   .form-move__top__move1
-                    = f.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__top__move2
-                    = f.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text"
+                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text"
                 .form-move__bottom
                   .form-move__bottom__move3
-                    = f.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__bottom__move4
-                    = f.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
 
         -# ------------------------ 6匹目 ------------------------ #-
         .party__wrap__bottom__pokemon6
@@ -874,13 +875,13 @@
                 .label-name
                   ポケモン
                 .form-name
-                  = f.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                  = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
               -# ---- ニックネーム ---- #-
               .pokemon-container__top__nickname
                 .label-nickname
                   ニックネーム
                 .form-nickname
-                  = f.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
               -# ---- 性別 ---- #-
               .pokemon-container__top__gender
                 .label-gender
@@ -898,35 +899,35 @@
               .form-base-status
                 .form-base-status__hp
                   H
-                  = f.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__attack
                   A
-                  = f.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__defense
                   B
-                  = f.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-attack
                   C
-                  = f.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__special-defense
                   D
-                  = f.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                 .form-base-status__speed
                   S
-                  = f.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                  = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             .pokemon-container__center
               -# ---- 特性 ---- #-
               .pokemon-container__center__ability
                 .label-ability
                   特性
                 .form-ability
-                  = f.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                  = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
               -# ---- 性格 ---- #-
               .pokemon-container__center__nature
                 .label-nature
                   性格
                 .form-nature
-                  = f.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                  = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
               -# ---- 持ち物 ---- #-
               .pokemon-container__center__item
                 .label-item
@@ -980,22 +981,22 @@
                 .form-current-status
                   .form-current-status__hp
                     H
-                    = f.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_hp, class: "form-current-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__attack
                     A
-                    = f.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_attack, class: "form-current-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__defense
                     B
-                    = f.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_defense, class: "form-current-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-attack
                     C
-                    = f.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_attack, class: "form-current-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__special-defense
                     D
-                    = f.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_special_defense, class: "form-current-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-current-status__speed
                     S
-                    = f.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :cs_speed, class: "form-current-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 努力値 ---- #-
             .pokemon-container__effort-values
               .label-effort-value
@@ -1003,36 +1004,36 @@
                 .form-effort-value
                   .form-effort-value__hp
                     H
-                    = f.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_hp, class: "form-effort-value__hp__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__attack
                     A
-                    = f.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_attack, class: "form-effort-value__attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__defense
                     B
-                    = f.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_defense, class: "form-effort-value__defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special-attack
                     C
-                    = f.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_attack, class: "form-effort-value__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__special_defense
                     D
-                    = f.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_special_defense, class: "form-effort-value__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
                   .form-effort-value__speed
                     S
-                    = f.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ev_speed, class: "form-effort-value__speed__input", maxlength: "3", type: "text", autocomplete: "off"
             -# ---- 技 ---- #-
             .pokemon-container__moves
               .label-move
                 わざ
                 .form-move__top
                   .form-move__top__move1
-                    = f.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move1, class: "form-move__top__move1__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__top__move2
-                    = f.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move2, class: "form-move__top__move2__input", maxlength: "8", type: "text", autocomplete: "off"
                 .form-move__bottom
                   .form-move__bottom__move3
-                    = f.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move3, class: "form-move__bottom__move3__input", maxlength: "8", type: "text", autocomplete: "off"
                   .form-move__bottom__move4
-                    = f.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
+                    = pokemon.text_field :move4, class: "form-move__bottom__move4__input", maxlength: "8", type: "text", autocomplete: "off"
 
   .party-name
     パーティ名
