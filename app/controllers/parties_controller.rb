@@ -5,9 +5,6 @@ class PartiesController < ApplicationController
 
   def new
     @pokemon = Pokemon.new
-    @pokemon.build_current_status
-    @pokemon.build_base_status
-    @pokemon.build_effort_value
     @party = Party.new
     @party.build_pokemon
   end
@@ -40,26 +37,22 @@ class PartiesController < ApplicationController
 
   def pokemon_params
     params.permit(
-      :name,
-      :nickname,
-      :gender,
-      :ability,
-      :nature,
-      :item,
-      :move1,
-      :move2,
-      :move3,
-      :move4,
-      current_status_attributes:[:cs_hp, :cs_attack, :cs_defense, :cs_special_attack, :cs_special_defense, :cs_speed],
-      base_status_attributes:   [:bs_hp, :bs_attack, :bs_defense, :bs_special_attack, :bs_special_defense, :bs_speed],
-      effort_value_attributes:  [:ev_hp, :ev_attack, :ev_defense, :ev_special_attack, :ev_special_defense, :ev_speed]
+      :name, :nickname, :gender, :ability, :nature, :item, :move1, :move2, :move3, :move4,
+      :cs_hp, :cs_attack, :cs_defense, :cs_special_attack, :cs_special_defense, :cs_speed,
+      :bs_hp, :bs_attack, :bs_defense, :bs_special_attack, :bs_special_defense, :bs_speed,
+      :ev_hp, :ev_attack, :ev_defense, :ev_special_attack, :ev_special_defense, :ev_speed
     )
   end
 
   def party_params
     params.permit(
       :party_name,
-      pokemons_attributes:[:name, :nickname, :gender, :ability, :nature, :item, :move1, :move2, :move3, :move4]
+      pokemons_attributes:[
+        :name, :nickname, :gender, :ability, :nature, :item, :move1, :move2, :move3, :move4,
+        :cs_hp, :cs_attack, :cs_defense, :cs_special_attack, :cs_special_defense, :cs_speed,
+        :bs_hp, :bs_attack, :bs_defense, :bs_special_attack, :bs_special_defense, :bs_speed,
+        :ev_hp, :ev_attack, :ev_defense, :ev_special_attack, :ev_special_defense, :ev_speed
+      ]
     )
   end
 
