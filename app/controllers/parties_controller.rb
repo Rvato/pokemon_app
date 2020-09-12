@@ -6,13 +6,13 @@ class PartiesController < ApplicationController
   def new
     @pokemon = Pokemon.new
     @party = Party.new
-    @party.build_pokemon
+    @party.pokemon.build
   end
 
   def create
-    @pokemon = Pokemon.new(pokemon_params)
+    @pokemon = Pokemon.create(pokemon_params)
     @pokemon.save
-    @party = Party.new(party_params)
+    @party = Party.create(party_params)
     @party.save
     redirect_to root_path, notice: 'パーティを作成しました'
   end
