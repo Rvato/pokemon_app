@@ -2,7 +2,8 @@
   .party
 
     .party__wrap
-      = f.fields_for :pokemon do |pokemon|
+      -# accept_nested_attributes_for の名称と合わせる必要があるため ":pokemons" とする
+      = f.fields_for :pokemons do |pokemon|
 
         .party__wrap__top
           -# ------------------------ 1匹目 ------------------------ #-

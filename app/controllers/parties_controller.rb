@@ -10,8 +10,6 @@ class PartiesController < ApplicationController
   end
 
   def create
-    @pokemon = Pokemon.create(pokemon_params)
-    @pokemon.save
     @party = Party.create(party_params)
     @party.save
     redirect_to root_path, notice: 'パーティを作成しました'
@@ -35,17 +33,17 @@ class PartiesController < ApplicationController
 
   private
 
-  def pokemon_params
-    params.permit(
-      :name, :nickname, :gender, :ability, :nature, :item, :move1, :move2, :move3, :move4,
-      :cs_hp, :cs_attack, :cs_defense, :cs_special_attack, :cs_special_defense, :cs_speed,
-      :bs_hp, :bs_attack, :bs_defense, :bs_special_attack, :bs_special_defense, :bs_speed,
-      :ev_hp, :ev_attack, :ev_defense, :ev_special_attack, :ev_special_defense, :ev_speed
-    )
-  end
+  # def pokemon_params
+  #   params.permit(
+  #     :name, :nickname, :gender, :ability, :nature, :item, :move1, :move2, :move3, :move4,
+  #     :cs_hp, :cs_attack, :cs_defense, :cs_special_attack, :cs_special_defense, :cs_speed,
+  #     :bs_hp, :bs_attack, :bs_defense, :bs_special_attack, :bs_special_defense, :bs_speed,
+  #     :ev_hp, :ev_attack, :ev_defense, :ev_special_attack, :ev_special_defense, :ev_speed
+  #   )
+  # end
 
   def party_params
-    params.permit(
+    params.require(:party).permit(
       :party_name,
       pokemons_attributes:[
         :name, :nickname, :gender, :ability, :nature, :item, :move1, :move2, :move3, :move4,
