@@ -1,8 +1,9 @@
-= form_with model: @party, local: true, class: "party-register" do |f|
+= form_with model: @party, local: true, scope: :party, class: "party-register" do |f|
   .party
 
     .party__wrap
-      = f.fields_for :pokemon do |pokemon|
+      -# accepts_nested_attributes_for の名称と合わせる必要があるため ":pokemons" とする
+      = f.fields_for :pokemons, local: true do |pokemon|
 
         .party__wrap__top
           -# ------------------------ 1匹目 ------------------------ #-
@@ -16,23 +17,28 @@
                   .label-name
                     ポケモン
                   .form-name
-                    = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off"
+                    = pokemon.text_field :name, class: "form-name__input", maxlength: "6", type: "text", autocomplete: "off", name: "party[pokemons][name]", id: "party_pokemons_name"
                 -# ---- ニックネーム ---- #-
                 .pokemon-container__top__nickname
                   .label-nickname
                     ニックネーム
                   .form-nickname
-                    = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off"
+                    = pokemon.text_field :nickname, class: "form-nickname__input", maxlength: "12", type: "text", autocomplete: "off", name: "party[pokemons][nickname]", id: "party_pokemons_nickname"
                 -# ---- 性別 ---- #-
                 .pokemon-container__top__gender
                   .label-gender
                     性別
                   .form-gender
-                    %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
-                      %option{ value: "" }  ----
-                      %option{ value: "1" } ♂
-                      %option{ value: "2" } ♀
-                      %option{ value: "3" } 不明
+                    = f.select :gender, lass: "form-gender__input", type: "text", name: "party[pokemons][gender]", id: "party_pokemons_gender"
+                      = f.option{ value: "" }  ----
+                      = f.option{ value: "1" } ♂
+                      = f.option{ value: "2" } ♀
+                      = f.option{ value: "3" } 不明
+                    -# = f.select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
+                    -#   %option{ value: "" }  ----
+                    -#   %option{ value: "1" } ♂
+                    -#   %option{ value: "2" } ♀
+                    -#   %option{ value: "3" } 不明
               -# ----種族値---- #-
               .pokemon-container__base-statuses
                 .label-base-status
