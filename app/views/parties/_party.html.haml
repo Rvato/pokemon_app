@@ -29,16 +29,16 @@
                   .label-gender
                     性別
                   .form-gender
-                    = f.select :gender, lass: "form-gender__input", type: "text", name: "party[pokemons][gender]", id: "party_pokemons_gender"
-                      = f.option{ value: "" }  ----
-                      = f.option{ value: "1" } ♂
-                      = f.option{ value: "2" } ♀
-                      = f.option{ value: "3" } 不明
-                    -# = f.select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
-                    -#   %option{ value: "" }  ----
-                    -#   %option{ value: "1" } ♂
-                    -#   %option{ value: "2" } ♀
-                    -#   %option{ value: "3" } 不明
+                    -# = f.select :gender, lass: "form-gender__input", type: "text", name: "party[pokemons][gender]", id: "party_pokemons_gender"
+                    -#   = f.option{ value: "" }  ----
+                    -#   = f.option{ value: "1" } ♂
+                    -#   = f.option{ value: "2" } ♀
+                    -#   = f.option{ value: "3" } 不明
+                    %select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
+                      %option{ value: "" }  ----
+                      %option{ value: "1" } ♂
+                      %option{ value: "2" } ♀
+                      %option{ value: "3" } 不明
               -# ----種族値---- #-
               .pokemon-container__base-statuses
                 .label-base-status
