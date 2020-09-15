@@ -4,13 +4,18 @@ class PartiesController < ApplicationController
   end
 
   def new
-    @gender = [{id: "", name: ""}, {id: 1, name: "bbb"}, {id: 3, name: "ccc"}]
+    @gender = [
+      {id: "", name: ""},
+      {id: 1, name: "♂"},
+      {id: 2, name: "♀"},
+      {id: 3, name: "不明"}
+    ]
     @party = Party.new
-    @party.pokemons.build
   end
 
   def create
     @party = Party.new(party_params)
+    @party.pokemons.build
     @party.save
     redirect_to root_path, notice: 'パーティを作成しました'
   end
