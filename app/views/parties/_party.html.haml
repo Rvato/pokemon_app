@@ -29,16 +29,7 @@
                   .label-gender
                     性別
                   .form-gender
-                    = f.select :gender, lass: "form-gender__input", type: "text", name: "party[pokemons][gender]", id: "party_pokemons_gender"
-                      = f.option{ value: "" }  ----
-                      = f.option{ value: "1" } ♂
-                      = f.option{ value: "2" } ♀
-                      = f.option{ value: "3" } 不明
-                    -# = f.select{ name: "exp_gender", type: "text", class: "form-gender__input", id: "exp_gender" }
-                    -#   %option{ value: "" }  ----
-                    -#   %option{ value: "1" } ♂
-                    -#   %option{ value: "2" } ♀
-                    -#   %option{ value: "3" } 不明
+                    -# = pokemon.select :gender, options_for_select(@gender.map{|c|[c[:name], c[:id]]}), {}, {class: "party[pokemons][gender]", id: "party_pokemons_gender"}
               -# ----種族値---- #-
               .pokemon-container__base-statuses
                 .label-base-status
@@ -46,35 +37,35 @@
                 .form-base-status
                   .form-base-status__hp
                     H
-                    = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :bs_hp, class: "form-base-status__hp__input", maxlength: "3", type: "text", autocomplete: "off", name: "party[pokemons][bs_hp]", id: "party_pokemons_bs_hp"
                   .form-base-status__attack
                     A
-                    = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :bs_attack, class: "form-base-status__attack__input", maxlength: "3", type: "text", autocomplete: "off", name: "party[pokemons][bs_attack]", id: "party_pokemons_bs_attack"
                   .form-base-status__defense
                     B
-                    = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :bs_defense, class: "form-base-status__defense__input", maxlength: "3", type: "text", autocomplete: "off", name: "party[pokemons][bs_defense]", id: "party_pokemons_bs_defense"
                   .form-base-status__special-attack
                     C
-                    = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :bs_special_attack, class: "form-base-status__special-attack__input", maxlength: "3", type: "text", autocomplete: "off", name: "party[pokemons][bs_special_attack]", id: "party_pokemons_bs_special_attack"
                   .form-base-status__special-defense
                     D
-                    = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :bs_special_defense, class: "form-base-status__special-defense__input", maxlength: "3", type: "text", autocomplete: "off", name: "party[pokemons][bs_special_defense]", id: "party_pokemons_bs_special_defense"
                   .form-base-status__speed
                     S
-                    = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off"
+                    = pokemon.text_field :bs_speed, class: "form-base-status__speed__input", maxlength: "3", type: "text", autocomplete: "off", name: "party[pokemons][bs_speed]", id: "party_pokemons_bs_speed"
               .pokemon-container__center
                 -# ---- 特性 ---- #-
                 .pokemon-container__center__ability
                   .label-ability
                     特性
                   .form-ability
-                    = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off"
+                    = pokemon.text_field :ability, class: "form-ability__input", type: "text", autocomplete: "off", name: "party[pokemons][ability]", id: "party_pokemons_ability"
                 -# ---- 性格 ---- #-
                 .pokemon-container__center__nature
                   .label-nature
                     性格
                   .form-nature
-                    = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off"
+                    = pokemon.text_field :nature, class: "form-nature__input", maxlength: "5", type: "text", autocomplete: "off", name: "party[pokemons][nature]", id: "party_pokemons_nature"
                 -# ---- 持ち物 ---- #-
                 .pokemon-container__center__item
                   .label-item
