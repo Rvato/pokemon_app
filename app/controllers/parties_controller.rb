@@ -4,12 +4,12 @@ class PartiesController < ApplicationController
   end
 
   def new
-    @gender = [
-      {id: "", name: ""},
-      {id: 1, name: "♂"},
-      {id: 2, name: "♀"},
-      {id: 3, name: "不明"}
-    ]
+    # @gender = [
+    #   {id: "", name: ""},
+    #   {id: 1, name: "♂"},
+    #   {id: 2, name: "♀"},
+    #   {id: 3, name: "不明"}
+    # ]
     @party = Party.new
   end
 

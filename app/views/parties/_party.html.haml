@@ -29,8 +29,7 @@
                   .label-gender
                     性別
                   .form-gender
-                    = pokemon.select :gender, options_for_select(@gender.map{|c|[c[:name], c[:id]]}), {}, {class: "party[pokemons][gender]", id: "party_pokemons_gender"}
-                    -# = pokemon.select :gender, class: "form-gender__input", type: "text", name: "party[pokemons][gender]", id: "party_pokemons_gender"
+                    -# = pokemon.select :gender, options_for_select(@gender.map{|c|[c[:name], c[:id]]}), {}, {class: "party[pokemons][gender]", id: "party_pokemons_gender"}
               -# ----種族値---- #-
               .pokemon-container__base-statuses
                 .label-base-status
